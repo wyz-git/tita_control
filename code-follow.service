@@ -1,0 +1,15 @@
+[Unit]
+Description=TITA code follow1 service.
+After=tita-bringup.service
+
+[Service]
+User=robot
+Type=simple
+Environment="ROS_DOMAIN_ID=200"
+Environment="ROS_LOCALHOST_ONLY=0"
+WorkingDirectory=/usr/local
+ExecStart=/usr/bin/bash -c "sleep 10 && source /opt/ros/humble/setup.bash && python3 /home/robot/ros2_common_ws/code-follow.py"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

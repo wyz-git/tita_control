@@ -1,0 +1,16 @@
+[Unit]
+Description=TITA read pose service.
+After=tita-bringup.service
+
+[Service]
+User=robot
+Type=simple
+TimeoutStopSec=10
+Environment="ROS_DOMAIN_ID=200"
+Environment="ROS_LOCALHOST_ONLY=0"
+WorkingDirectory=/usr/local
+ExecStart=/usr/bin/bash -c "sleep 1 && source /home/robot/ros2_common_ws/install/setup.bash && chmod 777 /home/robot/ros2_common_ws/install/ros2_aruco/lib/ros2_aruco/aruco_node && /home/robot/ros2_common_ws/install/ros2_aruco/lib/ros2_aruco/aruco_node"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

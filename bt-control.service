@@ -1,0 +1,17 @@
+[Unit]
+Description=TITA bt control service.
+After=tita-bringup.service
+
+
+[Service]
+User=robot
+Type=simple
+TimeoutStopSec=10
+Environment="ROS_DOMAIN_ID=200"
+Environment="ROS_LOCALHOST_ONLY=0"
+WorkingDirectory=/usr/local
+ExecStart=/usr/bin/bash -c "sleep 2 && source /opt/ros/humble/setup.bash && python3 /home/robot/ros2_common_ws/bt-control.py"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
