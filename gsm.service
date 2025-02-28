@@ -1,0 +1,23 @@
+[Unit]
+Description=TITA gsm service.
+After=tita-bringup.service
+
+[Service]
+User=robot
+Type=simple
+#TimeoutStopSec=10
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/gst-launch-1.0 -v nvarguscamerasrc sensor-id=0 ! \
+'video/x-raw(memory:NVMM), width=(int)480, height=(int)300, format=(string)NV12, framerate=(fraction)120/1' ! \
+nvvidconv ! \
+'video/x-raw, width=(int)480, height=(int)300, format=(string)I420' ! \
+x264enc tune=zerolatency ! \
+queue max-size-buffers=1 max-size-time=0 max-size-bytes=0 ! \
+'video/x-h264, profile=baseline' ! \
+h264parse ! \
+mpegtsmux alignment=7 ! \
+srtsink uri=srt://119.23.220.15:8890 streamid=publish:live
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
