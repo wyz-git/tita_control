@@ -1,0 +1,10 @@
+Package: code-follow  
+Version: 1.0  
+Section: base  
+Priority: optional  
+Architecture: all  
+Depends: python3,python3-paho-mqtt
+Maintainer: <wuyunzhou@directdrive.com>  
+Description: Code follow package  
+ .  
+ This package contains the motor upgrade files and dependencies.

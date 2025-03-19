@@ -1,0 +1,14 @@
+[Unit]
+Description=TITA read pose service.
+After=tita-bringup.service
+
+[Service]
+User=robot
+Type=simple
+TimeoutStopSec=10
+EnvironmentFile=/etc/ros_env
+ExecStart=/usr/bin/bash -c "sleep 1 && source /usr/code-follow/install/setup.bash  && /usr/code-follow/install/ros2_aruco/lib/ros2_aruco/aruco_node"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

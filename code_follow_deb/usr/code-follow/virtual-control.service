@@ -1,0 +1,13 @@
+[Unit]
+Description=TITA virtual control service.
+After=tita-bringup.service
+
+[Service]
+User=robot
+Type=simple
+EnvironmentFile=/etc/ros_env
+ExecStart=/usr/bin/bash -c "sleep 15 && source /opt/ros/humble/setup.bash && python3 /usr/code-follow/virtual-control.py"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

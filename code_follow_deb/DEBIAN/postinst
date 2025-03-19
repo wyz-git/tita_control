@@ -1,0 +1,29 @@
+#!/bin/bash  
+set -e  
+
+# Copy share lib
+#cp -r /usr/code-follow /usr/  
+
+cp /usr/code-follow/code-follow.service /lib/systemd/system/
+cp /usr/code-follow/read-pose.service /lib/systemd/system/
+cp /usr/code-follow/switch-state.service /lib/systemd/system/
+cp /usr/code-follow/virtual-control.service /lib/systemd/system/
+
+chmod 777 /usr/code-follow/install/ros2_aruco/lib/ros2_aruco/aruco_node
+chmod +x /usr/code-follow/generate_ros_env.sh
+
+# 从 .bashrc 中提取 ROS_DOMAIN_ID
+ROS_DOMAIN_ID=$(grep -oP 'export ROS_DOMAIN_ID=\K\d+' /home/robot/.bashrc || echo 0)
+echo "ROS_DOMAIN_ID=$ROS_DOMAIN_ID" > /etc/ros_env
+
+systemctl daemon-reload
+systemctl enable read-pose.service
+systemctl restart read-pose.service
+systemctl enable code-follow.service
+systemctl restart code-follow.service
+systemctl enable switch-state.service
+systemctl restart switch-state.service
+systemctl enable virtual-control.service
+systemctl restart virtual-control.service
+
+exit 0
