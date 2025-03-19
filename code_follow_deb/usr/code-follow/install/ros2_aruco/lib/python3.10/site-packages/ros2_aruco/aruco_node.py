@@ -122,7 +122,7 @@ class ArucoNode(rclpy.node.Node):
         self.distortion = None
 
         self.aruco_dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_5X5_250)
-        self.aruco_parameters = cv2.aruco.DetectorParameters()
+        self.aruco_parameters = cv2.aruco.DetectorParameters_create()
         self.bridge = CvBridge()
 
     def get_robot_name(self):
