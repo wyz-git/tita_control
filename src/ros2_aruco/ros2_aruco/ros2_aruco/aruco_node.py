@@ -1,32 +1,4 @@
-"""
-This node locates Aruco AR markers in images and publishes their ids and poses.
-
-Subscriptions:
-   /camera/image_raw (sensor_msgs.msg.Image)
-   /camera/camera_info (sensor_msgs.msg.CameraInfo)
-   /camera/camera_info (sensor_msgs.msg.CameraInfo)
-
-Published Topics:
-    /aruco_poses (geometry_msgs.msg.PoseArray)
-       Pose of all detected markers (suitable for rviz visualization)
-
-    /aruco_markers (ros2_aruco_interfaces.msg.ArucoMarkers)
-       Provides an array of all poses along with the corresponding
-       marker ids.
-
-Parameters:
-    marker_size - size of the markers in meters (default .0625)
-    aruco_dictionary_id - dictionary that was used to generate markers
-                          (default DICT_5X5_250)
-    image_topic - image topic to subscribe to (default /camera/image_raw)
-    camera_info_topic - camera info topic to subscribe to
-                         (default /camera/camera_info)
-
-Author: Nathan Sprague
-Version: 10/26/2020
-
-"""
-
+import subprocess
 import rclpy
 import rclpy.node
 from rclpy.qos import qos_profile_sensor_data
@@ -44,6 +16,10 @@ from rcl_interfaces.msg import ParameterDescriptor, ParameterType
 class ArucoNode(rclpy.node.Node):
     def __init__(self):
         super().__init__("aruco_node")
+
+        # 动态获取机器人名称
+        self.robot_name = self.get_robot_name()
+        self.get_logger().info(f"Detected robot name: {self.robot_name}")
 
         # Declare and read parameters
         self.declare_parameter(
@@ -66,7 +42,7 @@ class ArucoNode(rclpy.node.Node):
 
         self.declare_parameter(
             name="image_topic",
-            value="/tita3037207/perception/camera/image/left",
+            value=f"/{self.robot_name}/perception/camera/image/left",
             descriptor=ParameterDescriptor(
                 type=ParameterType.PARAMETER_STRING,
                 description="Image topic to subscribe to.",
@@ -75,7 +51,7 @@ class ArucoNode(rclpy.node.Node):
 
         self.declare_parameter(
             name="camera_info_topic",
-            value="/tita3037207/perception/camera/info/left",
+            value=f"/{self.robot_name}/perception/camera/info/left",
             descriptor=ParameterDescriptor(
                 type=ParameterType.PARAMETER_STRING,
                 description="Camera info topic to subscribe to.",
@@ -148,6 +124,20 @@ class ArucoNode(rclpy.node.Node):
         self.aruco_dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_5X5_250)
         self.aruco_parameters = cv2.aruco.DetectorParameters()
         self.bridge = CvBridge()
+
+    def get_robot_name(self):
+        """通过执行命令获取机器人名称"""
+        command_str = "ros2 topic list | grep tita | awk -F/ '{print $2}' | head -n 1 | sed 's/\\..*//'"
+        try:
+            result = subprocess.run(command_str, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            self.get_logger().info(f"Command output: {result.stdout}")  # 打印标准输出
+            output = result.stdout.strip()
+            if not output.startswith('tita'):
+                raise ValueError("Extracted topic name does not start with 'tita'.")
+            return output
+        except subprocess.CalledProcessError as e:
+            self.get_logger().error(f"Command failed with error: {e.stderr}")  # 打印错误信息
+            raise ValueError(f"Error executing command: {e.stderr}")
 
     def info_callback(self, info_msg):
         self.info_msg = info_msg
