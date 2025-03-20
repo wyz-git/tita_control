@@ -41,6 +41,12 @@ class JoyPublisher(Node):
         self.axes6 = -1
         self.axes7 = 0
         self.axes8 = 1
+        self.kp = 0.8  # 比例系数
+        self.ki = 0.00 #积分系数
+        self.kd = 0.1  # 微分系数
+        self.prev_error = 0
+        self.integral = 0
+        
 
         self.msg_flag = 0
         self.axes_mode = False
@@ -90,10 +96,15 @@ class JoyPublisher(Node):
 
         if self.msg_flag == 1:
             if self.distance_to_qr_code < 0.50:
-                self.axes3 = 0.1
+                self.axes3 = 0.15
             else:
-                self.axes3 = (0.5 - self.distance_to_qr_code) * 2
-            self.axes4 = (self.standard_angle - self.c_angle) * 1.8 / 480
+                self.axes3 = (0.5 - self.distance_to_qr_code) * 3
+                # 在decode_qr_code中实现PID
+                error = self.standard_angle - self.c_angle
+                self.integral += error
+                derivative = error - self.prev_error
+                self.prev_error = error
+                self.axes4 = (self.kp * error + self.ki * self.integral + self.kd * derivative) * 1.8 / 480
 
         elif self.msg_flag > 50:
             self.axes3 = 0.0
