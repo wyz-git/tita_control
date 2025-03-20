@@ -6,7 +6,7 @@ After=tita-bringup.service
 User=robot
 Type=simple
 EnvironmentFile=/etc/ros_env
-ExecStart=/usr/bin/bash -c "sleep 10 && source /opt/ros/humble/setup.bash && python3 /usr/code-follow/switch-state.py"
+ExecStart=/usr/bin/bash -c "sleep 30 && source /opt/ros/humble/setup.bash && python3 /usr/code-follow/switch-state.py"
 Restart=on-failure
 
 [Install]

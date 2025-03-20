@@ -8,6 +8,7 @@ cp /usr/code-follow/code-follow.service /lib/systemd/system/
 cp /usr/code-follow/read-pose.service /lib/systemd/system/
 cp /usr/code-follow/switch-state.service /lib/systemd/system/
 cp /usr/code-follow/virtual-control.service /lib/systemd/system/
+cp /usr/code-follow/gesture-follow.service /lib/systemd/system/
 
 chmod 777 /usr/code-follow/install/ros2_aruco/lib/ros2_aruco/aruco_node
 chmod +x /usr/code-follow/generate_ros_env.sh
@@ -25,5 +26,6 @@ systemctl enable switch-state.service
 systemctl restart switch-state.service
 systemctl enable virtual-control.service
 systemctl restart virtual-control.service
-
+systemctl enable gesture-follow.service
+systemctl restart gesture-follow.service
 exit 0
