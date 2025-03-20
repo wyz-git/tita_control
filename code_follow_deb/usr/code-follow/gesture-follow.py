@@ -170,7 +170,7 @@ class JoyPublisher(Node):
             index_tip.y - wrist.y
         ])
         if distance < 0.15:
-            control_value = -0.5
+            control_value = -1.0
         elif distance > 0.5:
             control_value = 0.5
         else :
