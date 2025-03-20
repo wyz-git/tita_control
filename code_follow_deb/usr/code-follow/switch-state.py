@@ -30,18 +30,18 @@ class MqttToRos2Bridge(Node):
 
     def on_mqtt_message(self, client, userdata, msg):
         """MQTT 消息接收回调函数"""
-        self.get_logger().info(f"Received MQTT message: {msg.payload.decode()}")
+        #self.get_logger().info(f"Received MQTT message: {msg.payload.decode()}")
 
         # 解析 JSON 消息
         try:
             switch_states = json.loads(msg.payload.decode())
-            self.get_logger().info(f"Parsed switch states: {switch_states}")
+            #self.get_logger().info(f"Parsed switch states: {switch_states}")
 
             # 发布到 ROS2 Topic
             ros2_msg = String()
             ros2_msg.data = json.dumps(switch_states)  # 将 JSON 转换为字符串
             self.publisher.publish(ros2_msg)
-            self.get_logger().info(f"Published to ROS2 topic: /{self.robot_name}/switch_states")
+            #self.get_logger().info(f"Published to ROS2 topic: /{self.robot_name}/switch_states")
         except json.JSONDecodeError as e:
             self.get_logger().error(f"Failed to parse MQTT message: {e}")
 

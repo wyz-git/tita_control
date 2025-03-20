@@ -68,7 +68,7 @@ class JoyPublisher(Node):
             switch_states = json.loads(msg.data)
             # 获取 "4" 后面的值
             self.axes_mode = switch_states.get("4", 0)  # 如果不存在 "4"，默认值为 0
-            self.get_logger().info(f"Updated axes_mode: {self.axes_mode}")
+            #self.get_logger().info(f"Updated axes_mode: {self.axes_mode}")
         except json.JSONDecodeError as e:
             self.get_logger().error(f"Failed to parse switch_states message: {e}")
 

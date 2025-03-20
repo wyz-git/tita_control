@@ -3,7 +3,7 @@ Version: 1.0
 Section: base  
 Priority: optional  
 Architecture: all  
-Depends: python3,python3-paho-mqtt
+Depends: python3,python3-paho-mqtt,ros-humble-tf-transformations
 Maintainer: <wuyunzhou@directdrive.com>  
 Description: Code follow package  
  .  
