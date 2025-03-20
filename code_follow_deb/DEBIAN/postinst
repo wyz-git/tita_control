@@ -2,6 +2,7 @@
 set -e  
 
 sudo -u robot pip3 install mediapipe
+sudo -u robot pip3 install numpy==1.23.0
 
 # Copy share lib
 #cp -r /usr/code-follow /usr/  
