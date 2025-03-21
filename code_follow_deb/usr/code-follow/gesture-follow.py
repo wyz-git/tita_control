@@ -93,7 +93,7 @@ class JoyPublisher(Node):
         """图像订阅回调函数"""
         try:
             cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
-            self.get_logger().debug("收到新图像帧", throttle_duration_sec=1.0)
+            # self.get_logger().debug("收到新图像帧", throttle_duration_sec=1.0)
                 
             if self.control_state['mode'] == 1:
                 self.process_gesture(cv_image)
@@ -103,15 +103,15 @@ class JoyPublisher(Node):
 
     def process_gesture(self, frame):
         """手势识别处理"""
-        self.get_logger().debug("开始手势识别处理")
+        # self.get_logger().debug("开始手势识别处理")
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         results = self.hands.process(rgb_frame)
         
         if results.multi_hand_landmarks:
-            self.get_logger().info("检测到手势", throttle_duration_sec=0.5)
+            # self.get_logger().info("检测到手势", throttle_duration_sec=0.5)
             self.update_gesture_controls(results, frame.shape)
         else:
-            self.get_logger().debug("未检测到手部")
+            # self.get_logger().debug("未检测到手部")
             self.reset_controls()
 
     def update_gesture_controls(self, results, frame_shape):
@@ -120,28 +120,28 @@ class JoyPublisher(Node):
         image_center = (width // 2, height // 2)
         
         for idx, hand_landmarks in enumerate(results.multi_hand_landmarks):
-            self.get_logger().debug(f"处理第 {idx+1} 只手的手势")
+            # self.get_logger().debug(f"处理第 {idx+1} 只手的手势")
             
             # 获取手腕位置
             wrist = hand_landmarks.landmark[self.mp_hands.HandLandmark.WRIST]
             wrist_pos = (int(wrist.x * width), int(wrist.y * height))
             
             # 记录手腕相对位置
-            self.get_logger().debug(f"手腕坐标 X:{wrist_pos[0]} Y:{wrist_pos[1]}")
+            # self.get_logger().debug(f"手腕坐标 X:{wrist_pos[0]} Y:{wrist_pos[1]}")
 
             # 水平控制
             prev_h = self.control_state['axes'][3]
             new_h = self.calculate_horizontal_control(wrist_pos[0], image_center[0], width)
             self.control_state['axes'][3] = new_h
-            if prev_h != new_h:
-                self.get_logger().info(f"水平控制量变化: {prev_h} → {new_h}")
+            # if prev_h != new_h:
+            #     self.get_logger().info(f"水平控制量变化: {prev_h} → {new_h}")
 
             # 垂直控制
             prev_v = self.control_state['axes'][2]
             new_v = self.calculate_vertical_control(hand_landmarks)
             self.control_state['axes'][2] = new_v
-            if prev_v != new_v:
-                self.get_logger().info(f"垂直控制量变化: {prev_v} → {new_v}")
+            # if prev_v != new_v:
+            #     self.get_logger().info(f"垂直控制量变化: {prev_v} → {new_v}")
 
     def calculate_horizontal_control(self, x, center_x, frame_width):
         """计算水平方向控制量"""
@@ -149,11 +149,11 @@ class JoyPublisher(Node):
         delta = x - center_x
         
         if abs(delta) < dead_zone:
-            self.get_logger().debug(f"处于死区范围: {abs(delta):.1f} < {dead_zone:.1f}")
+            # self.get_logger().debug(f"处于死区范围: {abs(delta):.1f} < {dead_zone:.1f}")
             return 0.0
             
         direction = "左" if delta < 0 else "右"
-        self.get_logger().info(f"水平方向: {direction} 偏移量: {abs(delta):.1f}px")
+        # self.get_logger().info(f"水平方向: {direction} 偏移量: {abs(delta):.1f}px")
         self.integral += delta
         derivative = delta - self.prev_error
         self.prev_error = delta
@@ -175,13 +175,13 @@ class JoyPublisher(Node):
             control_value = 0.5
         else :
             control_value = 0.0
-        self.get_logger().info(f"距离: {distance:.3f}")
+        # self.get_logger().info(f"距离: {distance:.3f}")
         return control_value
 
     def reset_controls(self):
         """重置控制状态"""
         if self.control_state['axes'][2] != 0 or self.control_state['axes'][3] != 0:
-            self.get_logger().warning("手势丢失，正在重置控制状态")
+            # self.get_logger().warning("手势丢失，正在重置控制状态")
             self.control_state['axes'][2] = 0.0
             self.control_state['axes'][3] = 0.0
 
@@ -193,7 +193,7 @@ class JoyPublisher(Node):
             joy_msg.header.frame_id = "gesture_control"
             joy_msg.axes = self.control_state['axes']
             self.joy_pub.publish(joy_msg)
-            self.get_logger().debug("已发布控制指令", throttle_duration_sec=0.1)
+            # self.get_logger().debug("已发布控制指令", throttle_duration_sec=0.1)
 
 def main(args=None):
     rclpy.init(args=args)
