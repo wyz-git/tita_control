@@ -1,0 +1,22 @@
+#!/bin/bash  
+set -e  
+
+sudo -u orin pip3 install edge-tts
+sudo -u orin pip3 install  paho-mqtt
+sudo -u orin pip3 install pydub
+
+
+cp /usr/media-transmission/arecord.service /lib/systemd/system/
+cp /usr/media-transmission/image.service /lib/systemd/system/
+cp /usr/media-transmission/mqtt_play.service /lib/systemd/system/
+
+#chmod 777 /usr/code-follow/install/ros2_aruco/lib/ros2_aruco/aruco_node
+
+systemctl daemon-reload
+systemctl enable arecord.service
+systemctl restart arecord.service
+systemctl enable image.service
+systemctl restart image.service
+systemctl enable mqtt_play.service
+systemctl restart mqtt_play.service
+exit 0

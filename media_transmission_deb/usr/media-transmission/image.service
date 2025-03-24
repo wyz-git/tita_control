@@ -1,0 +1,15 @@
+[Unit]
+Description=TITA image service.
+After=NetworkManager.service
+
+[Service]
+User=orin
+Type=simple
+TimeoutStopSec=10
+ExecStartPre=/bin/sleep 5
+ExecStart=ffmpeg -f v4l2 -framerate 90 -video_size 848x480 -i /dev/video4 -threads 6 \
+-c:v libx264 -preset ultrafast -tune zerolatency -f mpegts 'srt://119.23.220.15:8890?streamid=publish:live'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

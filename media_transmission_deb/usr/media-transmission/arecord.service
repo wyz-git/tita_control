@@ -1,0 +1,14 @@
+[Unit]
+Description=TITA arecord service.
+After=NetworkManager.service
+
+[Service]
+User=orin
+Type=simple
+TimeoutStopSec=10
+ExecStartPre=/bin/sleep 5
+ExecStart=ffmpeg -f alsa -channels 1 -i hw:2,0 -acodec libmp3lame -f mpegts 'srt://119.23.220.15:8890?streamid=publish:live1'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

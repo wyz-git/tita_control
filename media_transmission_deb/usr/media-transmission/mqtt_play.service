@@ -1,0 +1,14 @@
+[Unit]
+Description=Mqtt play
+After=NetworkManager.service
+
+[Service]
+User=orin
+Type=simple
+TimeoutStopSec=10
+ExecStartPre=/bin/sleep 20
+ExecStart=sudo -u orin -E ALSA_CARD=Device XDG_RUNTIME_DIR=/run/user/1000 python3 /usr/media-transmission/mqtt_play.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

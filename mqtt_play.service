@@ -1,13 +1,13 @@
 [Unit]
-Description=TITA image pub service.
-After=tita-bringup.service
+Description=Mqtt play 
+After=NetworkManager
 
 [Service]
 User=robot
 Type=simple
-#TimeoutStopSec=10
+TimeoutStopSec=10
 ExecStartPre=/bin/sleep 5
-ExecStart=python3 /home/robot/ros2_common_ws/mqtt_play.py
+ExecStart=python3 /home/orin/media-transmission/mqtt_play.py
 Restart=on-failure
 
 [Install]

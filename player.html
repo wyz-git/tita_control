@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <video id="video" autoplay muted controls></video>
+  <script>
+    const pc = new RTCPeerConnection({
+      iceServers: [{ urls: "stun:stun.l.google.com:19302" }]  // 必须配置STUN服务器
+    });
+
+    // 接收视频轨道并绑定到<video>标签
+    pc.ontrack = (event) => {
+      const video = document.getElementById('video');
+      video.srcObject = event.streams[0];
+    };
+
+    // 从MediaMTX获取SDP Offer
+    fetch('http://119.23.220.15:8889/stream/webrtc')
+      .then(res => res.json())
+      .then(offer => pc.setRemoteDescription(offer))
+      .then(() => pc.createAnswer())
+      .then(answer => pc.setLocalDescription(answer))
+      .then(() => {
+        // 将Answer发送回MediaMTX
+        fetch('http://119.23.220.15:8889/stream/webrtc', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(pc.localDescription)
+        });
+      })
+      .catch(error => console.error('WebRTC协商失败:', error));
+  </script>
+</body>
+</html>
