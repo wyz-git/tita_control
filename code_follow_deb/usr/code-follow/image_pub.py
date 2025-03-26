@@ -92,9 +92,42 @@ class CameraControl(Node):
             return False
 
     def kill_camera_process(self):
-        """终止相机相关进程"""
-        kill_command = "ps aux | grep 'argus_camera_device' | grep -v grep | awk '{print $2}' | xargs -r sudo kill -9"
-        return self.safe_execute_command(kill_command)
+        """终止相机进程（无需密码）"""
+        try:
+            # 获取 PID
+            pgrep_result = subprocess.run(
+                ["pgrep", "-f", "argus_camera_device"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
+            if pgrep_result.returncode != 0:
+                self.logger.warning("未找到目标进程")
+                return True
+            
+            pids = pgrep_result.stdout.strip().split()
+            if not pids:
+                return True
+            
+            # 终止进程
+            kill_command = ["sudo", "-n", "/usr/bin/kill", "-9"] + pids
+            result = subprocess.run(
+                kill_command,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
+            
+            if result.returncode == 0:
+                self.logger.info("成功终止进程 PID: %s", pids)
+                return True
+            else:
+                self.logger.error("终止失败: %s", result.stderr)
+                return False
+                
+        except Exception as e:
+            self.logger.error("进程终止异常: %s", str(e))
+            return False
 
     def start_gstreamer_stream(self):
         """启动 GStreamer 推流进程"""
@@ -109,7 +142,7 @@ class CameraControl(Node):
             '!', 'queue',
             '!', 'h264parse',
             '!', 'mpegtsmux', 'alignment=7',
-            '!', 'srtsink', 'uri=srt://119.23.220.15:8890', 'streamid=publish:tita3037207'
+            '!', 'srtsink', 'uri=srt://119.23.220.15:8890', f'streamid=publish:{self.output}'
         ]
         
         try:
