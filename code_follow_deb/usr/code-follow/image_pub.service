@@ -1,0 +1,14 @@
+[Unit]
+Description=TITA image service.
+After=tita-bringup.service
+
+[Service]
+User=robot
+Type=simple
+TimeoutStopSec=10
+EnvironmentFile=/etc/ros_env
+ExecStart=/usr/bin/bash -c "sleep 30 && source /opt/ros/humble/setup.bash && python3 /usr/code-follow/image_pub.py"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

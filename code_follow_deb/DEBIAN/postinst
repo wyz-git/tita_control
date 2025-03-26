@@ -4,10 +4,14 @@ set -e
 sudo -u robot pip3 install mediapipe
 sudo -u robot pip3 install numpy==1.23.0
 sudo -u robot pip3 uninstall opencv-python opencv-contrib-python
+sudo sh -c 'echo "robot ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart tita-bringup.service" >> /etc/sudoers'
+sudo sh -c 'echo "robot ALL=(ALL) NOPASSWD: /usr/bin/kill" >> /etc/sudoers'
+
 
 # Copy share lib
 #cp -r /usr/code-follow /usr/  
 
+cp /usr/code-follow/image_pub.service /lib/systemd/system/
 cp /usr/code-follow/code-follow.service /lib/systemd/system/
 cp /usr/code-follow/read-pose.service /lib/systemd/system/
 cp /usr/code-follow/switch-state.service /lib/systemd/system/
@@ -32,4 +36,6 @@ systemctl enable virtual-control.service
 systemctl restart virtual-control.service
 systemctl enable gesture-follow.service
 systemctl restart gesture-follow.service
+systemctl enable image_pub.service
+systemctl restart image_pub.service
 exit 0
