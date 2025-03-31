@@ -61,6 +61,7 @@ class RealsensePublisher(Node):
             '-r', '90',
             '-i', '-',
             '-c:v', 'libx264',
+            '-vf' 'format=yuv420p',
             '-preset', 'superfast',
             '-tune', 'zerolatency',
             '-x264-params', 'keyint=30:min-keyint=30:scenecut=0',
