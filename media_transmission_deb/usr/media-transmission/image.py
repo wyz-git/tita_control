@@ -26,10 +26,10 @@ class RollingQueue(queue.Queue):
 class RealsensePublisher(Node):
     def __init__(self):
         super().__init__('realsense_publisher')
-
+        self.output = self._get_topic_name()
         # ROS2发布器初始化
-        self.image_pub = self.create_publisher(Image, '/image_raw', 10)
-        self.info_pub = self.create_publisher(CameraInfo, '/camera_info', 10)
+        self.image_pub = self.create_publisher(Image, f"/{self.output}/image_raw", 10)
+        self.info_pub = self.create_publisher(CameraInfo, f"/{self.output}/camera_info", 10)
         self.bridge = CvBridge()
 
         # 推流状态监控
@@ -48,6 +48,12 @@ class RealsensePublisher(Node):
         self.config = rs.config()
         self._init_realsense()
 
+    def _get_topic_name(self):
+        robot_name = os.environ.get('ROBOT_NAME')
+        if robot_name:
+            self.get_logger().info(f"Using ROBOT_NAME from env: {robot_name}")
+            return robot_name
+        
     def _init_ffmpeg_stream(self):
         """初始化FFmpeg推流管道"""
         # 优化硬件加速参数
@@ -58,18 +64,19 @@ class RealsensePublisher(Node):
             '-vcodec', 'rawvideo',
             '-pix_fmt', 'bgr24',
             '-s', '848x480',
-            '-r', '90',
+            '-r', '60',
             '-i', '-',
             '-c:v', 'libx264',
-            '-vf' 'format=yuv420p',
-            '-preset', 'superfast',
+            '-vf', 'format=yuv420p',
+            '-preset', 'ultrafast',
             '-tune', 'zerolatency',
             '-x264-params', 'keyint=30:min-keyint=30:scenecut=0',
             '-b:v', '3M',
             '-maxrate', '3M',
             '-bufsize', '1M',
+            '-threads', '6',
             '-f', 'mpegts',
-            'srt://119.23.220.15:8890?streamid=publish:live2'
+            f'srt://119.23.220.15:8890?streamid=publish:{self.output}'
         ]
 
         # 启动FFmpeg进程
@@ -130,13 +137,13 @@ class RealsensePublisher(Node):
                 self.frame_counter += 1
 
                 # 吞吐量统计
-                if time.time() - self.last_log_time > 1.0:
-                    # self.get_logger().info(
-                    #     f"推流吞吐量: {self.frame_counter}fps",
-                    #     throttle_duration_sec=1
-                    # )
-                    self.frame_counter = 0
-                    self.last_log_time = time.time()
+                # if time.time() - self.last_log_time > 1.0:
+                #     self.get_logger().info(
+                #         f"推流吞吐量: {self.frame_counter}fps",
+                #         throttle_duration_sec=1
+                #     )
+                #     self.frame_counter = 0
+                #     self.last_log_time = time.time()
 
             except queue.Empty:
                 continue

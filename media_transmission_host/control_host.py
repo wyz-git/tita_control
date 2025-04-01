@@ -10,7 +10,7 @@ class SerialToMqttBridge:
         self.mqtt_config = {
             "server": "119.23.220.15",
             "port": 1883,
-            "topic": "tita3037207",
+            "topic": "ao2car2063135",
             "client_id": "serial_to_mqtt"
         }
 

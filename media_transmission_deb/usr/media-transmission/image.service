@@ -6,9 +6,11 @@ After=NetworkManager.service
 User=orin
 Type=simple
 TimeoutStopSec=10
+EnvironmentFile=/etc/ros_env_domain
+EnvironmentFile=/etc/ros_env_name
 # 关键环境变量
 ExecStartPre=/bin/sleep 5
-ExecStart=source /home/orin/.bashrc && python3 /usr/media-transmission/image.py
+ExecStart=/usr/bin/bash -l -c "source /home/orin/.bashrc && source /opt/ros/humble/setup.bash && python3 /usr/media-transmission/image.py"
 Restart=on-failure
 
 [Install]

@@ -6,6 +6,7 @@ import subprocess
 from std_msgs.msg import String
 import json
 import threading
+import os 
 
 class JoyMQTTNode(Node):
     def __init__(self):
@@ -24,7 +25,7 @@ class JoyMQTTNode(Node):
             10
         )
         # 配置MQTT客户端
-        self.axes_mode = False
+        self.axes_mode = True
         self._init_mqtt_client()
 
     def _init_mqtt_client(self):
@@ -40,7 +41,7 @@ class JoyMQTTNode(Node):
         self.mqtt_thread.start()
 
     def switch_states_callback(self, msg):
-        """订阅 /tita3037207/switch_states 的回调函数"""
+        """订阅 /ao2car3037207/switch_states 的回调函数"""
         try:
             # 解析 JSON 消息
             switch_states = json.loads(msg.data)
@@ -50,30 +51,10 @@ class JoyMQTTNode(Node):
             self.get_logger().error(f"Failed to parse switch_states message: {e}")
 
     def _get_topic_name(self):
-        """执行shell命令获取主题名称"""
-        command_str = (
-            'ros2 topic list | grep tita | awk -F/ \'{print $2}\' | '
-            'head -n 1 | sed \'s/\\..*//\''
-        )
-        try:
-            result = subprocess.run(
-                command_str, 
-                shell=True, 
-                check=True, 
-                stdout=subprocess.PIPE, 
-                text=True
-            )
-            output = result.stdout.strip()
-            
-            if not output.startswith('tita'):
-                raise ValueError(f"Invalid topic prefix: {output}")
-            return output
-        except subprocess.CalledProcessError as e:
-            self.get_logger().error(f"Command failed: {e.stderr}")
-            raise
-        except ValueError as e:
-            self.get_logger().error(str(e))
-            raise
+        robot_name = os.environ.get('ROBOT_NAME')
+        if robot_name:
+            self.get_logger().info(f"Using ROBOT_NAME from env: {robot_name}")
+            return robot_name
 
     def _on_mqtt_connect(self, client, userdata, flags, rc):
         """MQTT连接回调"""
@@ -172,10 +153,10 @@ class JoyMQTTNode(Node):
                 -_normalize(channels[1]),
                 -_normalize(channels[2]),
                 -_normalize(channels[3]),
-                -(channels[4] / 800 - 1),
-                -(channels[5] / 900 - 1),
-                -(channels[6] / 800 - 1),
-                -(channels[7] / 900 - 1),
+                float(-(channels[4] // 800 - 1)),
+                float(-(channels[5] // 900 - 1)),
+                float(-(channels[6] // 800 - 1)),
+                float(-(channels[7] // 900 - 1)),
                 (channels[8] - 988) / 4
             ]
             

@@ -8,7 +8,7 @@ Type=simple
 TimeoutStopSec=10
 # 关键环境变量
 ExecStartPre=/bin/sleep 5
-ExecStart=source /home/orin/.bashrc && python3 /usr/media-transmission/mqtt_play.py
+ExecStart=/usr/bin/bash -l -c "source /home/orin/.bashrc && python3 /usr/media-transmission/mqtt_play.py"
 Restart=on-failure
 
 [Install]

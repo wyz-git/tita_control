@@ -9,8 +9,15 @@ sudo -u orin pip3 install pydub
 cp /usr/media-transmission/arecord.service /lib/systemd/system/
 cp /usr/media-transmission/image.service /lib/systemd/system/
 cp /usr/media-transmission/mqtt_play.service /lib/systemd/system/
+cp /usr/media-transmission/mqtt_window_control.service /lib/systemd/system/
+
 
 #chmod 777 /usr/code-follow/install/ros2_aruco/lib/ros2_aruco/aruco_node
+
+ROS_DOMAIN_ID=$(grep -oP 'export ROS_DOMAIN_ID=\K\d+' /home/orin/.bashrc || echo 0)
+echo "ROS_DOMAIN_ID=$ROS_DOMAIN_ID" > /etc/ros_env_domain
+ROBOT_NAME=$(grep -oP 'export ROBOT_NAME=\K\S+' /home/orin/.bashrc || echo 0)
+echo "ROBOT_NAME=$ROBOT_NAME" > /etc/ros_env_name
 
 systemctl daemon-reload
 systemctl enable arecord.service
@@ -19,4 +26,6 @@ systemctl enable image.service
 systemctl restart image.service
 systemctl enable mqtt_play.service
 systemctl restart mqtt_play.service
+systemctl enable mqtt_window_control.service
+systemctl restart mqtt_window_control.service
 exit 0

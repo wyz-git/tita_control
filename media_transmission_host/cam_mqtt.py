@@ -60,7 +60,7 @@ class DualSRTPlayerWithMQTT:
 
         ttk.Label(stream1_frame, text="地址:").grid(row=0, column=0, padx=5, pady=2)
         self.srt_url1 = ttk.Entry(stream1_frame)
-        self.srt_url1.insert(0, "srt://119.23.220.15:8890?streamid=read:live")
+        self.srt_url1.insert(0, "srt://119.23.220.15:8890?streamid=read:ao2car2063135")
         self.srt_url1.grid(row=0, column=1, sticky=tk.EW, padx=5, pady=2)
 
         self.btn_play1 = ttk.Button(stream1_frame, text="启动主流", 
