@@ -26,6 +26,8 @@ class RollingQueue(queue.Queue):
 class RealsensePublisher(Node):
     def __init__(self):
         super().__init__('realsense_publisher')
+        if not self._check_network_reachable('119.23.220.15'):
+            raise RuntimeError("网络不可达，无法连接推流服务器")
         self.output = self._get_topic_name()
         # ROS2发布器初始化
         self.image_pub = self.create_publisher(Image, f"/{self.output}/image_raw", 10)
@@ -33,7 +35,7 @@ class RealsensePublisher(Node):
         self.bridge = CvBridge()
 
         # 推流状态监控
-        self.stream_queue = RollingQueue(maxsize=30)
+        self.stream_queue = RollingQueue(maxsize=60)
         self.streaming_active = True
         self.dropped_frames = 0      # 丢弃帧计数器
         self.restart_count = 0       # 重启计数器
@@ -47,6 +49,29 @@ class RealsensePublisher(Node):
         self.pipeline = rs.pipeline()
         self.config = rs.config()
         self._init_realsense()
+
+    def _check_network_reachable(self, host):
+            if self._ping_host(host):
+                return True
+            return False
+
+    def _ping_host(self, host):
+        """ICMP ping检测"""
+        try:
+            result = subprocess.run(
+                ['ping', '-c', '3', '-W', '2', host],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=10
+            )
+            if result.returncode == 0:
+                self.get_logger().info(f"Ping {host} 成功")
+                return True
+        except subprocess.TimeoutExpired:
+            self.get_logger().warning(f"Ping {host} 超时")
+        except Exception as e:
+            self.get_logger().error(f"Ping检测异常: {str(e)}")
+        return False
 
     def _get_topic_name(self):
         robot_name = os.environ.get('ROBOT_NAME')
@@ -163,8 +188,6 @@ class RealsensePublisher(Node):
             # 管道状态检查
             if self.ffmpeg_proc.stdin.closed:
                 self.get_logger().error("管道已关闭")
-                self.destroy_node()
-                os._exit(1)
                 return
 
             # 带超时的写入检测
@@ -193,31 +216,14 @@ class RealsensePublisher(Node):
             self._restart_ffmpeg()
         except Exception as e:
             self.get_logger().error(f"未知写入错误: {str(e)}")
+            self._restart_ffmpeg()
 
     def _restart_ffmpeg(self):
-        """安全重启FFmpeg进程"""
+        """安全重启FFmpeg进程（改进版）"""
         self.restart_count += 1
-        self.get_logger().error(
-            f"第{self.restart_count}次重启推流进程...",
-            throttle_duration_sec=10
-        )
-        try:
-            if self.ffmpeg_proc.poll() is None:
-                self.ffmpeg_proc.stdin.close()
-                self.ffmpeg_proc.terminate()
-                self.ffmpeg_proc.wait(timeout=5)
-        except Exception as e:
-            self.get_logger().error(f"终止FFmpeg失败: {str(e)}")
-
-        # 清空队列
-        while not self.stream_queue.empty():
-            try:
-                self.stream_queue.get_nowait()
-                self.stream_queue.task_done()
-            except queue.Empty:
-                break
-
-        self._init_ffmpeg_stream()
+        self.get_logger().error(f"第{self.restart_count}次重启推流进程...")
+        self.destroy_node()
+        os._exit(1)
 
     def _init_realsense(self):
         """初始化RealSense设备"""
