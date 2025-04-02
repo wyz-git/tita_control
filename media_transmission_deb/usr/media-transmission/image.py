@@ -53,7 +53,7 @@ class RealsensePublisher(Node):
         if robot_name:
             self.get_logger().info(f"Using ROBOT_NAME from env: {robot_name}")
             return robot_name
-        
+
     def _init_ffmpeg_stream(self):
         """初始化FFmpeg推流管道"""
         # 优化硬件加速参数
@@ -99,7 +99,7 @@ class RealsensePublisher(Node):
                 line = self.ffmpeg_proc.stderr.readline()
                 if line:
                     self.get_logger().error(
-                        f"[FFmpeg] {line.decode().strip()}", 
+                        f"[FFmpeg] {line.decode().strip()}",
                         throttle_duration_sec=1
                     )
             except Exception as e:
@@ -112,24 +112,24 @@ class RealsensePublisher(Node):
         while self.streaming_active or not self.stream_queue.empty():
             try:
                 # 队列状态监控
-                qsize = self.stream_queue.qsize()
-                if time.time() - last_warn_time > 5:
-                    # self.get_logger().info(
-                    #     f"推流队列状态: size={qsize}/30",
-                    #     throttle_duration_sec=5
-                    # )
-                    last_warn_time = time.time()
+                # qsize = self.stream_queue.qsize()
+                # if time.time() - last_warn_time > 5:
+                #     # self.get_logger().info(
+                #     #     f"推流队列状态: size={qsize}/30",
+                #     #     throttle_duration_sec=5
+                #     # )
+                #     last_warn_time = time.time()
 
                 # 获取帧数据
-                start_time = time.time()
+                # start_time = time.time()
                 frame = self.stream_queue.get(timeout=1.0)
-                get_duration = time.time() - start_time
+                # get_duration = time.time() - start_time
 
-                # 获取延迟警告
-                if get_duration > 0.1:
-                    self.get_logger().warning(
-                        f"取帧耗时过长: {get_duration:.3f}s"
-                    )
+                # # 获取延迟警告
+                # if get_duration > 0.1:
+                #     self.get_logger().warning(
+                #         f"取帧耗时过长: {get_duration:.3f}s"
+                #     )
 
                 # 写入处理
                 self._safe_write_frame(frame)
@@ -163,6 +163,8 @@ class RealsensePublisher(Node):
             # 管道状态检查
             if self.ffmpeg_proc.stdin.closed:
                 self.get_logger().error("管道已关闭")
+                self.destroy_node()
+                os._exit(1)
                 return
 
             # 带超时的写入检测
@@ -181,10 +183,10 @@ class RealsensePublisher(Node):
                 self.ffmpeg_proc.stdin.flush()
                 write_duration = time.time() - write_start
 
-                if write_duration > 0.1:
-                    self.get_logger().warning(
-                        f"大帧写入耗时: {write_duration:.3f}s 尺寸: {frame.nbytes/1024:.1f}KB"
-                    )
+                # if write_duration > 0.1:
+                #     self.get_logger().warning(
+                #         f"大帧写入耗时: {write_duration:.3f}s 尺寸: {frame.nbytes/1024:.1f}KB"
+                #     )
 
         except (BrokenPipeError, OSError) as e:
             self.get_logger().error(f"写入失败: {str(e)}")

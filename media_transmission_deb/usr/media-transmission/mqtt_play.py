@@ -7,6 +7,8 @@ import io
 import threading
 import time
 import os
+import subprocess
+import re
 
 # 配置参数
 CONFIG = {
@@ -103,12 +105,49 @@ class MQTTSpeechService:
         except Exception as e:
             print(f"❌ 消息处理错误: {str(e)}")
 
+    def get_usb_audio_device(self):
+        """动态获取USB音频设备"""
+        try:
+            output = subprocess.check_output(["aplay", "-l"], text=True)
+            # 使用正则匹配USB设备
+            pattern = r"card (?P<card>\d+):.*USB.*device (?P<device>\d+):"
+            
+            for line in output.split("\n"):
+                match = re.search(pattern, line)
+                if match:
+                    return f"plughw:{match.group('card')},{match.group('device')}"
+            
+            print("⚠️ 未找到USB音频设备，使用默认设备")
+            return "default"  # 回退到系统默认设备
+        except Exception as e:
+            print(f"❌ 设备检测失败: {str(e)}")
+            return "default"
+
+    # 修改后的播放方法
     def process_message(self, text):
         """带锁的语音处理"""
         with self.playback_lock:
             if audio := self.tts.text_to_speech(text):
                 try:
-                    play(audio)
+                    # 动态获取设备（关键修改）
+                    audio_device = self.get_usb_audio_device()
+                    
+                    with io.BytesIO() as wav_io:
+                        audio.export(wav_io, format="wav")
+                        wav_data = wav_io.getvalue()
+
+                    # 通过aplay播放
+                    cmd = ["aplay", "-D", audio_device, "-q"]
+                    process = subprocess.Popen(
+                        cmd,
+                        stdin=subprocess.PIPE,
+                        stderr=subprocess.PIPE
+                    )
+                    process.communicate(input=wav_data)
+                    
+                    if process.returncode != 0:
+                        print(f"❌ 播放失败，错误码: {process.returncode}")
+                    
                     print("▶️ 播放完成")
                 except Exception as e:
                     print(f"❌ 播放失败: {str(e)}")

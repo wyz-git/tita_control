@@ -7,7 +7,7 @@ import paho.mqtt.client as mqtt
 class DualSRTPlayerWithMQTT:
     def __init__(self, root):
         self.root = root
-        self.root.title("双路SRT流播放器 + MQTT发布端")
+        self.root.title("TITA控制端")
 
         # 初始化变量
         self.process1 = None  # 主SRT流进程

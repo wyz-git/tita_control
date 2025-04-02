@@ -28,13 +28,19 @@ class JoyMQTTNode(Node):
         self.axes_mode = True
         self._init_mqtt_client()
 
+    def _on_mqtt_disconnect(self, client, userdata, rc):
+
+        self.get_logger().error(f"连接断开")
+        self.destroy_node()
+        os._exit(1)
+
     def _init_mqtt_client(self):
         """初始化并启动MQTT客户端线程"""
         self.mqtt_client = mqtt.Client()
         self.mqtt_client.on_connect = self._on_mqtt_connect
         self.mqtt_client.on_message = self._on_mqtt_message
         self.mqtt_client.connect("119.23.220.15", 1883, 10)
-        
+        self.mqtt_client.on_disconnect = self._on_mqtt_disconnect
         # 在独立线程中运行MQTT循环
         self.mqtt_thread = threading.Thread(target=self._mqtt_loop)
         self.mqtt_thread.daemon = True
@@ -152,14 +158,13 @@ class JoyMQTTNode(Node):
                 -_normalize(channels[0]),
                 -_normalize(channels[1]),
                 -_normalize(channels[2]),
-                -_normalize(channels[3]),
+                _normalize(channels[3]),
                 float(-(channels[4] // 800 - 1)),
                 float(-(channels[5] // 900 - 1)),
                 float(-(channels[6] // 800 - 1)),
                 float(-(channels[7] // 900 - 1)),
                 (channels[8] - 988) / 4
             ]
-            
             # 应用死区过滤
             for i in range(4):
                 if abs(axes[i]) < 0.0013:
