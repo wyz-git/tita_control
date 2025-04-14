@@ -10,12 +10,17 @@ import os
 import subprocess
 import re
 
+#zh-CN-XiaoxiaoNeural	活泼少女音，带情感功能
+#zh-CN-YunxiNeural	温暖男声（当前默认）
+#zh-CN-YunyangNeural	新闻播音腔，适合正式场景
+#zh-CN-XiaohanNeural	温柔女声，支持诗歌朗诵风格
+#en-US-JennyNeural	标准美式英语，商务场景适用
 # 配置参数
 CONFIG = {
     "mqtt_host": "119.23.220.15",
     "mqtt_port": 1883,
     "mqtt_topic": "srt1",
-    "voice_name": "zh-CN-YunxiNeural",  # 使用男声音
+    "voice_name": "zh-CN-XiaoxiaoNeural",  # 使用男声音
     "volume_boost": 16,                  # 音量增益(dB)
     "playback_speed": 1.1              # 播放速度
 }

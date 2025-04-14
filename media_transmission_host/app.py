@@ -186,15 +186,62 @@ class DualSRTPlayerWithMQTT:
                                   command=lambda: self.toggle_stream(2))
         self.btn_play2.grid(row=1, column=0, columnspan=2, pady=5)
 
-        # 消息发送区域
+    # =================== 消息发送区域 ===================
         msg_frame = ttk.LabelFrame(left_panel, text="消息发布")
         msg_frame.pack(fill=tk.X, padx=5, pady=5)
 
+        # 新增可滑动短语栏（结合滚动条实现）
+        phrase_container = ttk.Frame(msg_frame)
+        phrase_container.pack(fill=tk.X, pady=3)
+
+        # 创建水平滚动容器（参考Canvas实现）
+        canvas = tk.Canvas(phrase_container, height=30, highlightthickness=0)
+        scroll_x = ttk.Scrollbar(phrase_container, orient="horizontal", command=canvas.xview)
+
+        # 配置滚动区域
+        canvas.configure(xscrollcommand=scroll_x.set)
+        scroll_x.pack(side=tk.BOTTOM, fill=tk.X)
+        canvas.pack(side=tk.TOP, fill=tk.X)
+
+        # 创建短语按钮容器（使用Frame嵌套技术）
+        btn_frame = ttk.Frame(canvas)
+        canvas.create_window((0,0), window=btn_frame, anchor="nw")
+
+        # 常用短语配置（示例20个，可扩展）
+        phrases = [
+            "我来拿奶茶啦","奶茶帮我放上面，谢谢","请让让我", "危险请远离", 
+            "请问多少钱", "需要帮助吗", "前方拥堵", 
+            "注意安全", "请勿靠近", "紧急联系", 
+            "右转通行", "左转等候", "直行通过",
+            "停车等待", "保持距离", "减速慢行",
+            "谢谢配合", "请出示证件", "系统故障",
+            "正在处理", "稍等片刻","站住,打劫"
+        ]
+
+        # 动态生成按钮（参考批量创建技术）
+        for idx, text in enumerate(phrases):
+            btn = ttk.Button(
+                btn_frame, 
+                text=text,
+                width=10,
+                command=lambda t=text: self.message_entry.insert(tk.END, t),
+                style='Phrase.TButton'
+            )
+            btn.grid(row=0, column=idx, padx=2, sticky="ew")
+
+        # 自适应配置
+        btn_frame.update_idletasks()
+        canvas.config(scrollregion=canvas.bbox("all"))
+        canvas.bind("<Configure>", 
+            lambda e: canvas.itemconfig(btn_frame, width=e.width))
+
+        # 输入框与发送按钮（保持原有结构）
         self.message_entry = ttk.Entry(msg_frame)
         self.message_entry.pack(fill=tk.X, padx=5, pady=2)
         self.message_entry.bind("<Return>", self.on_enter_pressed)
 
-        self.btn_publish = ttk.Button(msg_frame, text="发送消息", 
+        self.btn_publish = ttk.Button(msg_frame, 
+                                    text="发送消息", 
                                     command=self.send_message)
         self.btn_publish.pack(pady=5)
 
