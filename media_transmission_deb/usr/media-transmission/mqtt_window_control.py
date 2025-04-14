@@ -158,7 +158,7 @@ class JoyMQTTNode(Node):
                 -_normalize(channels[0]),
                 -_normalize(channels[1]),
                 -_normalize(channels[2]),
-                _normalize(channels[3]),
+                -_normalize(channels[3]),
                 float(-(channels[4] // 800 - 1)),
                 float(-(channels[5] // 900 - 1)),
                 float(-(channels[6] // 800 - 1)),

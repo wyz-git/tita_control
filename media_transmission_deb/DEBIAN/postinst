@@ -10,6 +10,7 @@ cp /usr/media-transmission/arecord.service /lib/systemd/system/
 cp /usr/media-transmission/image.service /lib/systemd/system/
 cp /usr/media-transmission/mqtt_play.service /lib/systemd/system/
 cp /usr/media-transmission/mqtt_window_control.service /lib/systemd/system/
+cp /usr/media-transmission/virtual-control.service /lib/systemd/system/
 
 
 chmod 777 /usr/media-transmission/arecord.sh
@@ -28,4 +29,6 @@ systemctl enable mqtt_play.service
 systemctl restart mqtt_play.service
 systemctl enable mqtt_window_control.service
 systemctl restart mqtt_window_control.service
+systemctl enable virtual-control.service
+systemctl restart virtual-control.service
 exit 0

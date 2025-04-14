@@ -1,0 +1,17 @@
+[Unit]
+Description=Mqtt phone control
+After=NetworkManager.service
+
+[Service]
+User=orin
+Type=simple
+TimeoutStopSec=10
+# 关键环境变量
+EnvironmentFile=/etc/ros_env_domain
+EnvironmentFile=/etc/ros_env_name
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/bash -l -c "source /home/orin/.bashrc && source /opt/ros/humble/setup.bash && python3 /usr/media-transmission/virtual-control.py"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
