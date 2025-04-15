@@ -335,12 +335,12 @@ class DualSRTPlayerWithMQTT:
             )
             btn.grid(row=0, column=idx, padx=2, sticky="ew")
 
-        # 自适应配置（结合网页7的布局优化）
+        # 自适应配置
         btn_frame.update_idletasks()
         canvas.config(scrollregion=canvas.bbox("all"))
-        canvas.bind("<Configure>", 
-            lambda e: canvas.itemconfigure(self.btn_frame_id, width=e.width))  # 使用ID操作
-
+        # canvas.bind("<Configure>", 
+        #     lambda e: canvas.itemconfig(btn_frame, width=e.width))
+        
         # 输入框与发送按钮（保持原有结构）
         self.message_entry = ttk.Entry(msg_frame)
         self.message_entry.pack(fill=tk.X, padx=5, pady=2)
@@ -541,5 +541,5 @@ class DualSRTPlayerWithMQTT:
 if __name__ == "__main__":
     root = tk.Tk()
     app = DualSRTPlayerWithMQTT(root)
-    root.geometry("350x750")  # 调整窗口大小
+    root.geometry("350x800")  # 调整窗口大小
     root.mainloop()

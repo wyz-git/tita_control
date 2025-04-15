@@ -205,7 +205,7 @@ class DualSRTPlayerWithMQTT:
 
         # 创建短语按钮容器（使用Frame嵌套技术）
         btn_frame = ttk.Frame(canvas)
-        canvas.create_window((0,0), window=btn_frame, anchor="nw")
+        btn_frame_id = canvas.create_window((0,0), window=btn_frame, anchor="nw")
 
         # 常用短语配置（示例20个，可扩展）
         phrases = [
@@ -232,8 +232,8 @@ class DualSRTPlayerWithMQTT:
         # 自适应配置
         btn_frame.update_idletasks()
         canvas.config(scrollregion=canvas.bbox("all"))
-        canvas.bind("<Configure>", 
-            lambda e: canvas.itemconfig(btn_frame, width=e.width))
+        # canvas.bind("<Configure>", 
+        #     lambda e: canvas.itemconfig(btn_frame, width=e.width))
 
         # 输入框与发送按钮（保持原有结构）
         self.message_entry = ttk.Entry(msg_frame)
