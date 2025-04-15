@@ -1,0 +1,16 @@
+[2025-04-15 14:37:22.794300][Info][main][request_for_elevator_order] start request_for_elevator_order
+[2025-04-15 14:37:22.794531][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 14:37:23.794539][Info][main][cancel_take_elevator] waitting for request
+[2025-04-15 14:37:23.794614][Info][main][get_elevator_status] waitting for request
+[2025-04-15 14:37:23.795744][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 14:37:24.795983][Info][main][get_elevator_status] waitting for request
+[2025-04-15 14:37:24.796678][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 14:37:25.796950][Info][main][cancel_take_elevator] waitting for request
+[2025-04-15 14:37:25.797259][Info][main][get_elevator_status] waitting for request
+[2025-04-15 14:37:25.797314][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 14:37:26.797805][Info][main][get_elevator_status] waitting for request
+[2025-04-15 14:37:26.798151][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 14:37:27.714110][Info][main][request_for_elevator_order] wait for start_enter_elevator_is_ready
+[2025-04-15 14:37:27.799049][Info][main][get_elevator_status] get the elevator status
+[2025-04-15 14:37:27.799317][Info][main][get_elevaotor_command] start get_elevaotor_command
+[2025-04-15 14:37:27.988420][Error][main][get_elevator_status] timer task error [list index out of range]

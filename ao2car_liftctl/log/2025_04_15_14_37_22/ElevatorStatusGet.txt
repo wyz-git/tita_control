@@ -1,0 +1,14 @@
+[2025-04-15 14:37:22.793387][Info][ElevatorStatusGet][__init__] [ELEVATOR_COMMAND_GET]: MQTT INIT...
+[2025-04-15 14:37:27.800122][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_ID] [INFO]: MQTT_CHANNEL_CLIENT_ID is [rdms_iot_1912032485188239362]
+[2025-04-15 14:37:27.800207][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_PASSWORD] [INFO]: MQTT_CHANNEL_CLIENT_PASSWORD is [FFAC9F27611642CDAC6F571D09F39011]
+[2025-04-15 14:37:27.800286][Info][ElevatorStatusGet][get_MQTT_CHANNEL_HOST] MQTT_CHANNEL_HOST: [iotlink-1.rdms.rdmscloud.com |and| 2883]
+[2025-04-15 14:37:27.800366][Info][ElevatorStatusGet][get_MQTT_CHANNEL_USERNAME] [INFO]: MQTT_CHANNEL_USERNAME is [1912032485188239362]
+[2025-04-15 14:37:27.800439][Info][ElevatorStatusGet][connect] [INFO]: cloud_broker is [iotlink-1.rdms.rdmscloud.com]
+[2025-04-15 14:37:27.800511][Info][ElevatorStatusGet][connect] [INFO]: cloud_port is [2883]
+[2025-04-15 14:37:27.800582][Info][ElevatorStatusGet][connect] [INFO]: client_id is [rdms_iot_1912032485188239362]
+[2025-04-15 14:37:27.800654][Info][ElevatorStatusGet][connect] [INFO]: client_password is [FFAC9F27611642CDAC6F571D09F39011]
+[2025-04-15 14:37:27.842809][Info][ElevatorStatusGet][subscribe] Data topic: /EMQX1/1912032485188239362/user/data
+[2025-04-15 14:37:27.842906][Info][ElevatorStatusGet][subscribe] Command topic: /EMQX1/1912032485188239362/user/command
+[2025-04-15 14:37:27.842980][Info][ElevatorStatusGet][subscribe] ACK topic: /EMQX1/1912032485188239362/user/ack
+[2025-04-15 14:37:27.843053][Info][ElevatorStatusGet][subscribe] Subscribe to MQTT Broker: /EMQX1/1912032485188239362/user/command
+[2025-04-15 14:37:27.869087][Info][ElevatorStatusGet][on_connect] [Debug]: Success Connected to MQTT Broker!

@@ -1,0 +1,36 @@
+[2025-04-15 15:17:12.214909][Info][ElevatorStatusGet][__init__] [ELEVATOR_COMMAND_GET]: MQTT INIT...
+[2025-04-15 15:17:18.223449][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_ID] [INFO]: MQTT_CHANNEL_CLIENT_ID is [rdms_iot_1912042507061964802]
+[2025-04-15 15:17:18.223562][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_PASSWORD] [INFO]: MQTT_CHANNEL_CLIENT_PASSWORD is [AAF2BA4A86D74B0FB569EE442190E11A]
+[2025-04-15 15:17:18.223687][Info][ElevatorStatusGet][get_MQTT_CHANNEL_HOST] MQTT_CHANNEL_HOST: [iotlink-1.rdms.rdmscloud.com |and| 2883]
+[2025-04-15 15:17:18.223789][Info][ElevatorStatusGet][get_MQTT_CHANNEL_USERNAME] [INFO]: MQTT_CHANNEL_USERNAME is [1912042507061964802]
+[2025-04-15 15:17:18.223886][Info][ElevatorStatusGet][connect] [INFO]: cloud_broker is [iotlink-1.rdms.rdmscloud.com]
+[2025-04-15 15:17:18.223981][Info][ElevatorStatusGet][connect] [INFO]: cloud_port is [2883]
+[2025-04-15 15:17:18.224076][Info][ElevatorStatusGet][connect] [INFO]: client_id is [rdms_iot_1912042507061964802]
+[2025-04-15 15:17:18.224172][Info][ElevatorStatusGet][connect] [INFO]: client_password is [AAF2BA4A86D74B0FB569EE442190E11A]
+[2025-04-15 15:17:18.264902][Info][ElevatorStatusGet][subscribe] Data topic: /EMQX1/1912042507061964802/user/data
+[2025-04-15 15:17:18.265089][Info][ElevatorStatusGet][subscribe] Command topic: /EMQX1/1912042507061964802/user/command
+[2025-04-15 15:17:18.265195][Info][ElevatorStatusGet][subscribe] ACK topic: /EMQX1/1912042507061964802/user/ack
+[2025-04-15 15:17:18.265295][Info][ElevatorStatusGet][subscribe] Subscribe to MQTT Broker: /EMQX1/1912042507061964802/user/command
+[2025-04-15 15:17:18.284933][Info][ElevatorStatusGet][on_connect] [Debug]: Success Connected to MQTT Broker!
+[2025-04-15 15:17:44.062978][Info][ElevatorStatusGet][on_message] test...
+[2025-04-15 15:17:44.063110][Info][ElevatorStatusGet][on_message] Received `{"requestId":1744701464024,"heads":{"instructionId":"1361722166283628544","thingId":"1912042507061964802"},"body":{"command":"enter"}}` from `/EMQX1/1912042507061964802/user/command` topic
+[2025-04-15 15:17:48.164275][Info][ElevatorStatusGet][on_message] test...
+[2025-04-15 15:17:48.164454][Info][ElevatorStatusGet][on_message] Received `{"requestId":1744701468127,"heads":{"instructionId":"1361722183378505728","thingId":"1912042507061964802"},"body":{"command":"enter"}}` from `/EMQX1/1912042507061964802/user/command` topic
+[2025-04-15 15:19:01.026899][Info][ElevatorStatusGet][__init__] [ELEVATOR_COMMAND_GET]: MQTT INIT...
+[2025-04-15 15:19:07.034712][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_ID] [INFO]: MQTT_CHANNEL_CLIENT_ID is [rdms_iot_1897997883205001218]
+[2025-04-15 15:19:07.034800][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_PASSWORD] [INFO]: MQTT_CHANNEL_CLIENT_PASSWORD is [088987E62BC847C7AA9A0E054F124AB8]
+[2025-04-15 15:19:07.034878][Info][ElevatorStatusGet][get_MQTT_CHANNEL_HOST] MQTT_CHANNEL_HOST: [iotlink-1.rdms.rdmscloud.com |and| 2883]
+[2025-04-15 15:19:07.034951][Info][ElevatorStatusGet][get_MQTT_CHANNEL_USERNAME] [INFO]: MQTT_CHANNEL_USERNAME is [1897997883205001218]
+[2025-04-15 15:19:07.035023][Info][ElevatorStatusGet][connect] [INFO]: cloud_broker is [iotlink-1.rdms.rdmscloud.com]
+[2025-04-15 15:19:07.035094][Info][ElevatorStatusGet][connect] [INFO]: cloud_port is [2883]
+[2025-04-15 15:19:07.035162][Info][ElevatorStatusGet][connect] [INFO]: client_id is [rdms_iot_1897997883205001218]
+[2025-04-15 15:19:07.035231][Info][ElevatorStatusGet][connect] [INFO]: client_password is [088987E62BC847C7AA9A0E054F124AB8]
+[2025-04-15 15:19:07.076020][Info][ElevatorStatusGet][subscribe] Data topic: /EMQX1/1897997883205001218/user/data
+[2025-04-15 15:19:07.076154][Info][ElevatorStatusGet][subscribe] Command topic: /EMQX1/1897997883205001218/user/command
+[2025-04-15 15:19:07.076230][Info][ElevatorStatusGet][subscribe] ACK topic: /EMQX1/1897997883205001218/user/ack
+[2025-04-15 15:19:07.076302][Info][ElevatorStatusGet][subscribe] Subscribe to MQTT Broker: /EMQX1/1897997883205001218/user/command
+[2025-04-15 15:19:07.093309][Info][ElevatorStatusGet][on_connect] [Debug]: Success Connected to MQTT Broker!
+[2025-04-15 15:19:36.179745][Info][ElevatorStatusGet][on_message] test...
+[2025-04-15 15:19:36.179936][Info][ElevatorStatusGet][on_message] Received `{"requestId":1744701576143,"heads":{"instructionId":"1361722636547887104","thingId":"1897997883205001218"},"body":{"command":"enter"}}` from `/EMQX1/1897997883205001218/user/command` topic
+[2025-04-15 15:19:40.650137][Info][ElevatorStatusGet][on_message] test...
+[2025-04-15 15:19:40.650503][Info][ElevatorStatusGet][on_message] Received `{"requestId":1744701580613,"heads":{"instructionId":"1361722655297531904","thingId":"1897997883205001218"},"body":{"command":"enter"}}` from `/EMQX1/1897997883205001218/user/command` topic

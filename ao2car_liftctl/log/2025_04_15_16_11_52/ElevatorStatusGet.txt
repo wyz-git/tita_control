@@ -1,0 +1,16 @@
+[2025-04-15 16:11:52.356791][Info][ElevatorStatusGet][__init__] [ELEVATOR_COMMAND_GET]: MQTT INIT...
+[2025-04-15 16:11:58.365340][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_ID] [INFO]: MQTT_CHANNEL_CLIENT_ID is [rdms_iot_1912056264915955714]
+[2025-04-15 16:11:58.365419][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_PASSWORD] [INFO]: MQTT_CHANNEL_CLIENT_PASSWORD is [AB16EEF598B74352BF58949AD9CE35D3]
+[2025-04-15 16:11:58.365495][Info][ElevatorStatusGet][get_MQTT_CHANNEL_HOST] MQTT_CHANNEL_HOST: [iotlink-1.rdms.rdmscloud.com |and| 2883]
+[2025-04-15 16:11:58.365567][Info][ElevatorStatusGet][get_MQTT_CHANNEL_USERNAME] [INFO]: MQTT_CHANNEL_USERNAME is [1912056264915955714]
+[2025-04-15 16:11:58.365637][Info][ElevatorStatusGet][connect] [INFO]: cloud_broker is [iotlink-1.rdms.rdmscloud.com]
+[2025-04-15 16:11:58.365720][Info][ElevatorStatusGet][connect] [INFO]: cloud_port is [2883]
+[2025-04-15 16:11:58.365799][Info][ElevatorStatusGet][connect] [INFO]: client_id is [rdms_iot_1912056264915955714]
+[2025-04-15 16:11:58.365877][Info][ElevatorStatusGet][connect] [INFO]: client_password is [AB16EEF598B74352BF58949AD9CE35D3]
+[2025-04-15 16:11:58.385164][Info][ElevatorStatusGet][subscribe] Data topic: /EMQX1/1912056264915955714/user/data
+[2025-04-15 16:11:58.385288][Info][ElevatorStatusGet][subscribe] Command topic: /EMQX1/1912056264915955714/user/command
+[2025-04-15 16:11:58.385394][Info][ElevatorStatusGet][subscribe] ACK topic: /EMQX1/1912056264915955714/user/ack
+[2025-04-15 16:11:58.385490][Info][ElevatorStatusGet][subscribe] Subscribe to MQTT Broker: /EMQX1/1912056264915955714/user/command
+[2025-04-15 16:11:58.406990][Info][ElevatorStatusGet][on_connect] [Debug]: Success Connected to MQTT Broker!
+[2025-04-15 16:12:29.491001][Info][ElevatorStatusGet][on_message] test...
+[2025-04-15 16:12:29.491162][Info][ElevatorStatusGet][on_message] Received `{"requestId":1744704749466,"heads":{"instructionId":"1361735946430345216","thingId":"1912056264915955714"},"body":{"command":"enter"}}` from `/EMQX1/1912056264915955714/user/command` topic

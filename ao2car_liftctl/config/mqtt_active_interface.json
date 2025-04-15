@@ -1,0 +1,19 @@
+{
+        "lu_bang_yun_broker":{
+                "url":{
+                        "broker_header":"ec.rdmscloud.com"
+                },
+                "port":{
+                        "string":"1883"
+                }
+        },
+        "topic":{
+                "sub":{
+                        "command":"/EMQX1/1789900871220396034/user/command"
+                },
+                "pub":{
+                        "data":"/EMQX1/1789900871220396034/user/data",
+                        "ack":"/EMQX1/1789900871220396034/user/ack"
+                }
+        }
+}

@@ -1,0 +1,32 @@
+[2025-04-15 16:15:53.000316][Info][ElevatorStatusGet][__init__] [ELEVATOR_COMMAND_GET]: MQTT INIT...
+[2025-04-15 16:15:59.008075][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_ID] [INFO]: MQTT_CHANNEL_CLIENT_ID is [rdms_iot_1912057274472345601]
+[2025-04-15 16:15:59.008174][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_PASSWORD] [INFO]: MQTT_CHANNEL_CLIENT_PASSWORD is [E5E09EC1DE7645429C0BABD4AA8F98D4]
+[2025-04-15 16:15:59.008268][Info][ElevatorStatusGet][get_MQTT_CHANNEL_HOST] MQTT_CHANNEL_HOST: [iotlink-1.rdms.rdmscloud.com |and| 2883]
+[2025-04-15 16:15:59.008352][Info][ElevatorStatusGet][get_MQTT_CHANNEL_USERNAME] [INFO]: MQTT_CHANNEL_USERNAME is [1912057274472345601]
+[2025-04-15 16:15:59.008435][Info][ElevatorStatusGet][connect] [INFO]: cloud_broker is [iotlink-1.rdms.rdmscloud.com]
+[2025-04-15 16:15:59.008516][Info][ElevatorStatusGet][connect] [INFO]: cloud_port is [2883]
+[2025-04-15 16:15:59.008597][Info][ElevatorStatusGet][connect] [INFO]: client_id is [rdms_iot_1912057274472345601]
+[2025-04-15 16:15:59.008679][Info][ElevatorStatusGet][connect] [INFO]: client_password is [E5E09EC1DE7645429C0BABD4AA8F98D4]
+[2025-04-15 16:15:59.048327][Info][ElevatorStatusGet][subscribe] Data topic: /EMQX1/1912057274472345601/user/data
+[2025-04-15 16:15:59.048490][Info][ElevatorStatusGet][subscribe] Command topic: /EMQX1/1912057274472345601/user/command
+[2025-04-15 16:15:59.048579][Info][ElevatorStatusGet][subscribe] ACK topic: /EMQX1/1912057274472345601/user/ack
+[2025-04-15 16:15:59.048662][Info][ElevatorStatusGet][subscribe] Subscribe to MQTT Broker: /EMQX1/1912057274472345601/user/command
+[2025-04-15 16:15:59.081453][Info][ElevatorStatusGet][on_connect] [Debug]: Success Connected to MQTT Broker!
+[2025-04-15 16:16:03.580713][Info][ElevatorStatusGet][on_message] test...
+[2025-04-15 16:16:03.580914][Info][ElevatorStatusGet][on_message] Received `{"requestId":1744704963558,"heads":{"instructionId":"1361736844405665811","thingId":"1912057274472345601"},"body":{"command":"enter"}}` from `/EMQX1/1912057274472345601/user/command` topic
+[2025-04-15 16:17:01.910334][Info][ElevatorStatusGet][__init__] [ELEVATOR_COMMAND_GET]: MQTT INIT...
+[2025-04-15 16:17:07.917851][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_ID] [INFO]: MQTT_CHANNEL_CLIENT_ID is [rdms_iot_1897625652033527810]
+[2025-04-15 16:17:07.917931][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_PASSWORD] [INFO]: MQTT_CHANNEL_CLIENT_PASSWORD is [A361947292DB4039B834FD4707A5EFB0]
+[2025-04-15 16:17:07.918007][Info][ElevatorStatusGet][get_MQTT_CHANNEL_HOST] MQTT_CHANNEL_HOST: [iotlink-1.rdms.rdmscloud.com |and| 2883]
+[2025-04-15 16:17:07.918090][Info][ElevatorStatusGet][get_MQTT_CHANNEL_USERNAME] [INFO]: MQTT_CHANNEL_USERNAME is [1897625652033527810]
+[2025-04-15 16:17:07.918161][Info][ElevatorStatusGet][connect] [INFO]: cloud_broker is [iotlink-1.rdms.rdmscloud.com]
+[2025-04-15 16:17:07.918231][Info][ElevatorStatusGet][connect] [INFO]: cloud_port is [2883]
+[2025-04-15 16:17:07.918300][Info][ElevatorStatusGet][connect] [INFO]: client_id is [rdms_iot_1897625652033527810]
+[2025-04-15 16:17:07.918368][Info][ElevatorStatusGet][connect] [INFO]: client_password is [A361947292DB4039B834FD4707A5EFB0]
+[2025-04-15 16:17:07.956841][Info][ElevatorStatusGet][subscribe] Data topic: /EMQX1/1897625652033527810/user/data
+[2025-04-15 16:17:07.956983][Info][ElevatorStatusGet][subscribe] Command topic: /EMQX1/1897625652033527810/user/command
+[2025-04-15 16:17:07.957058][Info][ElevatorStatusGet][subscribe] ACK topic: /EMQX1/1897625652033527810/user/ack
+[2025-04-15 16:17:07.957130][Info][ElevatorStatusGet][subscribe] Subscribe to MQTT Broker: /EMQX1/1897625652033527810/user/command
+[2025-04-15 16:17:07.980198][Info][ElevatorStatusGet][on_connect] [Debug]: Success Connected to MQTT Broker!
+[2025-04-15 16:17:39.131900][Info][ElevatorStatusGet][on_message] test...
+[2025-04-15 16:17:39.132049][Info][ElevatorStatusGet][on_message] Received `{"requestId":1744705059106,"heads":{"instructionId":"1361737245158830080","thingId":"1897625652033527810"},"body":{"command":"enter"}}` from `/EMQX1/1897625652033527810/user/command` topic

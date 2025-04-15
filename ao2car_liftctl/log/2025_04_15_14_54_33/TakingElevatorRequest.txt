@@ -1,0 +1,900 @@
+[2025-04-15 14:54:33.039858][Debug][TakingElevatorRequest][return_config_json_data] [Debug]: security_key: [20250226e13b8c4a8a114b5eb0e6c417fef559db]
+[2025-04-15 14:54:33.040011][Debug][TakingElevatorRequest][request_robot_instantiation_identification] [Debug]: request_url is [https://ec.rdmscloud.com/dispatching/robot/668]
+[2025-04-15 14:54:33.461279][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":"1912036806260436994","pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:33.461481][Info][TakingElevatorRequest][request_robot_instantiation_identification] [Info]: ROBOT_IDENTIFICATION is [1912036806260436994]
+[2025-04-15 14:54:34.462301][Debug][TakingElevatorRequest][request_enable_robot_instantiation] [Debug]: request_url is [https://ec.rdmscloud.com/rdms-iot/things/1912036806260436994/activate/lite]
+[2025-04-15 14:54:34.749251][Debug][TakingElevatorRequest][request_put] {"code":"1","msg":"操作成功","result":{"thingId":"1912036806260436994","version":1,"channelData":{"type":"MainMqttChannel","properties":{"general":{"mqttVersion":"3.1.1","cleansession":true,"keepavlie":60},"password":"05B86E110F624003BDE3F21ADD99D617","clientId":"rdms_iot_1912036806260436994","host":"tcp://iotlink-1.rdms.rdmscloud.com:2883","lwt":{"enabled":false},"topic":{"sub":{"command":"/EMQX1/1912036806260436994/user/command"},"pub":{"data":"/EMQX1/1912036806260436994/user/data","ack":"/EMQX1/1912036806260436994/user/ack","passthrough":"/EMQX1/1912036806260436994/user/passthrough","event":"/EMQX1/1912036806260436994/user/event"}},"tls":{"enabled":false},"username":"1912036806260436994"}},"resourceGroups":[],"attachSetting":{"baseUrl":"http://47.106.103.96/rdms-iot","url":"-","method":"POST"},"accessSetting":null,"indirectThing":[]},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:34.749467][Info][TakingElevatorRequest][request_enable_robot_instantiation] [Info]: self.THING_ID is [1912036806260436994]
+[2025-04-15 14:54:34.749585][Info][TakingElevatorRequest][request_enable_robot_instantiation] [Info]: self.MQTT_CHANNEL_CLIENT_ID is [rdms_iot_1912036806260436994]
+[2025-04-15 14:54:34.749691][Info][TakingElevatorRequest][request_enable_robot_instantiation] [Info]: self.MQTT_CHANNEL_CLIENT_PASSWORD is [05B86E110F624003BDE3F21ADD99D617]
+[2025-04-15 14:54:34.749809][Info][TakingElevatorRequest][request_enable_robot_instantiation] [Info]: self.MQTT_CHANNEL_HOST is [tcp://iotlink-1.rdms.rdmscloud.com:2883]
+[2025-04-15 14:54:34.749912][Info][TakingElevatorRequest][request_enable_robot_instantiation] [Info]: self.MQTT_CHANNEL_TOPIC_SUB_COMMAND is [/EMQX1/1912036806260436994/user/command]
+[2025-04-15 14:54:34.750012][Info][TakingElevatorRequest][request_enable_robot_instantiation] [Info]: self.MQTT_CHANNEL_TOPIC_PUB_DATA is [/EMQX1/1912036806260436994/user/data]
+[2025-04-15 14:54:34.750110][Info][TakingElevatorRequest][request_enable_robot_instantiation] [Info]: self.MQTT_CHANNEL_TOPIC_PUB_ACK is [/EMQX1/1912036806260436994/user/ack]
+[2025-04-15 14:54:34.750208][Info][TakingElevatorRequest][request_enable_robot_instantiation] [Info]: self.MQTT_CHANNEL_USERNAME is [1912036806260436994]
+[2025-04-15 14:54:35.751418][Debug][TakingElevatorRequest][request_robot_online] [Debug]: request_url is [https://ec.rdmscloud.com/rdms-iot/things/1912036806260436994/online]
+[2025-04-15 14:54:35.962508][Debug][TakingElevatorRequest][request_put] {"code":"1","msg":"操作成功","result":null,"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:36.964370][Debug][TakingElevatorRequest][request_init_a_ride_request] [Debug]: request_url is [https://ec.rdmscloud.com/dispatching/requests]
+[2025-04-15 14:54:37.626353][Debug][TakingElevatorRequest][request_post] {"code":"1","msg":"操作成功","result":{"elevatorNumber":"00010001","taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"},"eleRealTimeData":{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":5,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":null,"elevatorStatusCode":null,"elevatorStatusName":null,"peopleNumber":null}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:39.045993][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:54:39.427093][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":5,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:39.427279][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:39.427360][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:54:39.427434][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:54:39.427507][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [5]
+[2025-04-15 14:54:39.427580][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:54:39.427654][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:54:39.427727][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:54:39.427800][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:54:39.427873][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:54:39.427952][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:41.430067][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:54:41.780408][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":5,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:41.780576][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:41.780669][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:54:41.780752][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:54:41.780827][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [5]
+[2025-04-15 14:54:41.780901][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:54:41.780974][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:54:41.781047][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:54:41.781120][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:54:41.781193][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:54:41.781267][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:43.784905][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:54:44.104071][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":5,"motion":"DOWN","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:44.104268][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:44.104362][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:54:44.104451][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:54:44.104538][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [5]
+[2025-04-15 14:54:44.104624][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [DOWN]
+[2025-04-15 14:54:44.104711][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:54:44.104797][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:54:44.104894][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:54:44.104981][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:54:44.105068][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:46.108196][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:54:46.425892][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":4,"motion":"DOWN","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:46.426100][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:46.426195][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:54:46.426282][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:54:46.426369][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [4]
+[2025-04-15 14:54:46.426454][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [DOWN]
+[2025-04-15 14:54:46.426540][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:54:46.426625][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:54:46.426713][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:54:46.426799][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:54:46.426886][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:48.429549][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:54:48.788306][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":4,"motion":"DOWN","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:48.788489][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:48.788570][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:54:48.788645][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:54:48.788719][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [4]
+[2025-04-15 14:54:48.788791][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [DOWN]
+[2025-04-15 14:54:48.788864][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:54:48.788935][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:54:48.789007][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:54:48.789079][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:54:48.789151][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:50.792116][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:54:51.095967][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":4,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:51.096127][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:51.096214][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:54:51.096289][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:54:51.096361][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [4]
+[2025-04-15 14:54:51.096437][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:54:51.096511][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:54:51.096583][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:54:51.096654][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:54:51.096726][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:54:51.096798][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:53.098222][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:54:53.444315][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":4,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:53.444499][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:53.444583][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:54:53.444667][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:54:53.444741][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [4]
+[2025-04-15 14:54:53.444814][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:54:53.444889][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:54:53.444970][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:54:53.445042][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:54:53.445114][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:54:53.445186][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:55.448321][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:54:55.771925][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":4,"motion":"DOWN","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:55.772112][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:55.772200][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:54:55.772278][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:54:55.772353][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [4]
+[2025-04-15 14:54:55.772425][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [DOWN]
+[2025-04-15 14:54:55.772496][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:54:55.772567][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:54:55.772638][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:54:55.772721][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:54:55.772796][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:57.776264][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:54:58.118891][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":3,"motion":"DOWN","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:54:58.119087][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:54:58.119183][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:54:58.119259][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:54:58.119331][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [3]
+[2025-04-15 14:54:58.119420][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [DOWN]
+[2025-04-15 14:54:58.119499][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:54:58.119572][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:54:58.119643][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:54:58.119715][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:54:58.119787][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:00.122932][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:00.480627][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":2,"motion":"DOWN","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:00.480818][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:00.480902][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:00.480980][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:00.481068][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [2]
+[2025-04-15 14:55:00.481145][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [DOWN]
+[2025-04-15 14:55:00.481221][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:00.481295][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:00.481369][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:55:00.481444][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:55:00.481519][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:02.484563][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:02.791119][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"DOWN","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:02.791303][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:02.791385][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:02.791460][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:02.791533][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:02.791604][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [DOWN]
+[2025-04-15 14:55:02.791678][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:02.791750][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:02.791821][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:55:02.791893][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:55:02.791966][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:04.794373][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:05.111681][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"DOWN","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:05.111865][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:05.111946][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:05.112032][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:05.112105][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:05.112178][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [DOWN]
+[2025-04-15 14:55:05.112251][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:05.112322][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:05.112395][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:55:05.112467][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:55:05.112541][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:07.114888][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:07.463548][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"1000","stageStatusName":"请求乘梯","taskStatusCode":"1001","taskStatusName":"乘梯请求已创建","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:07.463718][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:07.463830][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:07.463932][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:07.464031][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:07.464128][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:07.464227][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:07.464325][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:07.464423][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:55:07.464521][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:55:07.464629][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:09.466741][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:09.772837][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"working","elevatorStatusName":"作业中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"1012","taskStatusName":"电梯已到出发楼层","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:09.773041][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:09.773148][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:09.773247][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:09.773346][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:09.773443][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:09.773555][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:09.773652][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:55:09.773761][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [working]
+[2025-04-15 14:55:09.773860][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [作业中]
+[2025-04-15 14:55:09.773959][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:10.047062][Debug][TakingElevatorRequest][request_cancel_elevator_work] current_timestamp_ms is [1744700110047]
+[2025-04-15 14:55:10.574886][Debug][TakingElevatorRequest][request_delete] {"code":"1","msg":"操作成功","result":{"eleRealTimeData":{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":null,"elevatorStatusCode":null,"elevatorStatusName":null,"peopleNumber":null},"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:11.777861][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:12.142215][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:12.142443][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:12.142561][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:12.142664][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:12.142761][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:12.142858][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:12.142955][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:12.143052][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:55:12.143148][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:12.143246][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:12.143345][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:12.820169][Debug][TakingElevatorRequest][request_post] {"code":"0","msg":"操作失败","result":null,"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":false}
+[2025-04-15 14:55:12.820352][Info][TakingElevatorRequest][request_elevator_delay_open_the_door] [Info]: request result is not success...
+[2025-04-15 14:55:14.147264][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:14.470830][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:14.471032][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:14.471146][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:14.471248][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:14.471347][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:14.471444][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:14.471542][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:14.471639][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:55:14.471735][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:14.471831][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:14.471930][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:16.475811][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:16.826900][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:16.827100][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:16.827206][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:16.827305][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:16.827416][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:16.827514][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:16.827612][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:16.827709][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:55:16.827807][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:16.827904][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:16.828003][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:18.009027][Debug][TakingElevatorRequest][request_post] {"code":"1001006004","msg":"该任务事件ID对应的乘梯任务已完成","result":null,"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":false}
+[2025-04-15 14:55:18.009182][Info][TakingElevatorRequest][request_complete_enter_the_elevator] [Info]: request result is not success...
+[2025-04-15 14:55:18.831244][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:19.159851][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:19.160018][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:19.160126][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:19.160229][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:19.160328][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:19.160424][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:19.160523][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:19.160619][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:19.160716][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:19.160814][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:19.160912][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:21.162509][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:21.495096][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:21.495309][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:21.495395][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:21.495475][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:21.495553][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:21.495630][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:21.495709][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:21.495786][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:21.495863][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:21.495941][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:21.496021][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:23.498181][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:23.840730][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:23.840901][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:23.840981][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:23.841055][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:23.841136][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:23.841208][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:23.841280][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:23.841350][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:23.841421][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:23.841494][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:23.841574][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:25.844496][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:26.170394][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:26.170589][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:26.170701][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:26.170802][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:26.170904][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:26.171004][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:26.171104][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:26.171202][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:26.171299][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:26.171396][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:26.171507][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:28.175165][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:28.514528][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:28.514717][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:28.514804][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:28.514885][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:28.514965][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:28.515057][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:28.515138][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:28.515215][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:28.515294][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:28.515372][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:28.515449][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:30.518628][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:30.838626][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:30.838816][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:30.838909][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:30.838996][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:30.839082][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:30.839167][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:30.839253][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:30.839337][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:30.839423][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:30.839509][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:30.839597][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:32.842698][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:33.172625][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:33.172818][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:33.172900][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:33.172975][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:33.173049][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:33.173121][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:33.173193][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:33.173264][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:33.173336][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:33.173408][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:33.173481][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:35.175124][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:35.525144][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:35.525333][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:35.525418][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:35.525496][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:35.525582][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:35.525657][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:35.525742][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:35.525819][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:35.525893][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:35.525967][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:35.526041][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:37.529120][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:37.849755][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:37.849938][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:37.850029][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:37.850116][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:37.850201][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:37.850287][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:37.850371][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:37.850459][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:37.850544][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:37.850629][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:37.850727][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:39.853815][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:40.198854][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:40.199031][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:40.199111][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:40.199185][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:40.199258][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:40.199330][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:40.199407][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:40.199481][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:40.199564][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:40.199638][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:40.199712][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:42.202672][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:42.542963][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:42.543130][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:42.543210][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:42.543284][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:42.543357][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:42.543429][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:42.543502][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:42.543575][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:42.543647][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:42.543719][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:42.543792][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:44.546700][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:44.937680][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:44.937907][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:44.937988][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:44.938070][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:44.938146][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:44.938219][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:44.938292][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:44.938365][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:44.938437][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:44.938509][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:44.938581][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:46.941071][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:47.312070][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:47.312260][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:47.312341][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:47.312415][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:47.312500][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:47.312573][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:47.312645][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:47.312716][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:47.312788][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:47.312860][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:47.312933][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:49.314413][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:49.664640][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:49.664838][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:49.664922][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:49.665000][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:49.665077][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:49.665153][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:49.665230][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:49.665305][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:49.665379][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:49.665454][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:49.665536][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:51.669344][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:52.032528][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:52.032715][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:52.032796][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:52.032871][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:52.032945][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:52.033017][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:52.033090][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:52.033161][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:52.033233][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:52.033306][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:52.033379][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:54.034826][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:54.379421][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:54.379609][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:54.379689][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:54.379764][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:54.379837][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:54.379909][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:54.379982][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:54.380053][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:54.380125][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:54.380209][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:54.380288][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:56.382471][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:56.747191][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:56.747398][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:56.747480][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:56.747554][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:56.747627][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:56.747700][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:56.747779][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:56.747851][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:56.747923][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:56.747995][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:56.748068][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:58.750078][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:55:59.089811][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:55:59.089968][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:55:59.090049][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:55:59.090123][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:55:59.090207][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:55:59.090280][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:55:59.090353][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:55:59.090425][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:55:59.090497][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:55:59.090570][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:55:59.090643][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:01.094285][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:01.411708][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:01.411891][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:01.411972][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:01.412045][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:01.412118][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:01.412190][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:01.412262][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:01.412333][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:01.412404][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:01.412476][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:01.412556][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:03.416190][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:03.738100][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:03.738286][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:03.738366][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:03.738444][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:03.738519][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:03.738591][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:03.738664][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:03.738736][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:03.738808][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:03.738880][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:03.738954][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:05.742393][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:06.067090][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:06.067270][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:06.067350][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:06.067424][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:06.067496][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:06.067570][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:06.067644][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:06.067715][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:06.067786][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:06.067857][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:06.067931][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:08.070716][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:08.382118][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:08.382316][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:08.382398][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:08.382476][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:08.382549][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:08.382621][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:08.382694][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:08.382765][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:08.382836][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:08.382915][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:08.382990][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:10.386630][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:10.702430][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:10.702621][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:10.702702][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:10.702786][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:10.702859][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:10.702931][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:10.703003][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:10.703073][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:10.703144][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:10.703215][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:10.703288][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:12.706067][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:13.034641][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:13.034826][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:13.034907][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:13.034983][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:13.035067][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:13.035140][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:13.035212][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:13.035285][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:13.035356][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:13.035428][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:13.035508][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:15.038049][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:15.407515][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:15.407712][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:15.407793][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:15.407867][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:15.407940][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:15.408013][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:15.408087][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:15.408158][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:15.408230][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:15.408301][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:15.408373][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:17.411408][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:17.741197][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:17.741395][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:17.741480][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:17.741557][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:17.741633][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:17.741719][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:17.741797][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:17.741869][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:17.741941][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:17.742014][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:17.742087][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:19.745101][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:20.074296][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:20.074492][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:20.074573][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:20.074647][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:20.074720][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:20.074793][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:20.074866][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:20.074938][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:20.075010][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:20.075082][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:20.075155][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:22.078719][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:22.475139][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:22.475335][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:22.475421][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:22.475513][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:22.475591][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:22.475667][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:22.475744][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:22.475819][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:22.475895][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:22.475971][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:22.476049][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:24.479696][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:24.826347][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:24.826555][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:24.826635][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:24.826707][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:24.826777][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:24.826848][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:24.826918][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:24.826987][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:56:24.827067][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:24.827137][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:24.827213][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:26.830511][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:27.164360][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:27.164532][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:27.164614][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:27.164687][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:27.164760][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:27.164831][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:27.164903][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:27.164973][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:56:27.165043][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:27.165114][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:27.165186][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:29.166529][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:29.487906][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:29.488092][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:29.488185][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:29.488259][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:29.488332][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:29.488403][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:29.488475][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:29.488547][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:56:29.488618][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:29.488689][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:29.488761][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:31.490045][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:31.824282][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:31.824473][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:31.824554][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:31.824628][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:31.824701][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:31.824774][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:31.824846][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:31.824918][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:56:31.824989][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:31.825060][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:31.825133][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:33.828031][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:34.165287][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:34.165455][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:34.165534][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:34.165615][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:34.165687][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:34.165769][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:34.165842][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:34.165912][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:34.165982][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:34.166052][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:34.166124][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:36.168223][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:36.477882][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"UP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:36.478063][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:36.478157][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:36.478244][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:36.478330][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:36.478416][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [UP]
+[2025-04-15 14:56:36.478502][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:36.478588][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:36.478675][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:36.478771][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:36.478859][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:38.482020][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:38.832587][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":1,"motion":"UP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:38.832770][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:38.832851][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:38.832924][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:38.832997][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [1]
+[2025-04-15 14:56:38.833068][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [UP]
+[2025-04-15 14:56:38.833148][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:38.833225][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:38.833297][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:38.833369][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:38.833442][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:40.836489][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:41.146065][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":3,"motion":"UP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:41.146249][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:41.146340][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:41.146427][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:41.146512][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [3]
+[2025-04-15 14:56:41.146596][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [UP]
+[2025-04-15 14:56:41.146693][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:41.146777][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:41.146863][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:41.146948][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:41.147033][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:43.150712][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:43.505576][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":4,"motion":"UP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:43.505794][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:43.505891][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:43.505977][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:43.506062][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [4]
+[2025-04-15 14:56:43.506147][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [UP]
+[2025-04-15 14:56:43.506233][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:43.506318][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:43.506405][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:43.506490][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:43.506578][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:45.508443][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:45.841539][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":5,"motion":"UP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:45.841757][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:45.841850][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:45.841935][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:45.842012][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [5]
+[2025-04-15 14:56:45.842088][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [UP]
+[2025-04-15 14:56:45.842164][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:45.842239][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:45.842314][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:45.842390][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:45.842465][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:47.845478][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:48.197157][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":7,"motion":"UP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:48.197325][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:48.197404][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:48.197478][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:48.197549][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [7]
+[2025-04-15 14:56:48.197621][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [UP]
+[2025-04-15 14:56:48.197692][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:48.197771][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:48.197841][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:48.197930][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:48.198004][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:50.201603][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:50.568923][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":7,"motion":"UP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:50.569122][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:50.569206][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:50.569282][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:50.569356][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [7]
+[2025-04-15 14:56:50.569431][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [UP]
+[2025-04-15 14:56:50.569507][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:50.569583][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:50.569658][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:50.569743][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:50.569823][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:52.571363][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:52.896347][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:52.896515][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:52.896595][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:52.896669][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:52.896743][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:56:52.896815][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:52.896887][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:52.896958][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:52.897028][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:52.897110][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:52.897183][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:54.900166][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:55.233371][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:55.233550][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:55.233630][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:55.233711][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:55.233786][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:56:55.233858][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:55.233930][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:55.234000][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:56:55.234070][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:55.234140][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:55.234212][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:57.237765][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:57.565924][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:57.566092][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:57.566179][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:57.566271][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:57.566357][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:56:57.566434][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:57.566510][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:57.566585][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:56:57.566662][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:57.566738][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:57.566815][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:59.569775][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:56:59.893766][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":4,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:56:59.893952][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:56:59.894039][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:56:59.894119][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:56:59.894195][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:56:59.894269][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:56:59.894344][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:56:59.894418][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [4]
+[2025-04-15 14:56:59.894491][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:56:59.894576][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:56:59.894652][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:01.895885][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:02.223939][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:02.224128][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:02.224209][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:02.224283][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:02.224355][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:02.224426][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:02.224497][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:02.224567][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:02.224638][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:02.224708][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:02.224781][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:04.227838][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:04.591695][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:04.591876][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:04.591963][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:04.592039][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:04.592115][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:04.592190][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:04.592297][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:04.592381][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:04.592456][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:04.592530][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:04.592607][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:06.594063][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:06.944780][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:06.944960][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:06.945043][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:06.945117][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:06.945191][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:06.945263][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:06.945335][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:06.945406][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:06.945476][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:06.945547][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:06.945619][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:08.949203][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:09.278690][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:09.278884][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:09.278964][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:09.279052][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:09.279126][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:09.279199][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:09.279271][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:09.279349][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:09.279420][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:09.279493][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:09.279564][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:11.283393][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:11.604804][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:11.604992][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:11.605071][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:11.605145][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:11.605217][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:11.605288][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:11.605360][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:11.605430][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:11.605501][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:11.605584][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:11.605657][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:13.608705][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:13.951510][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:13.951698][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:13.951790][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:13.951864][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:13.951937][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:13.952008][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:13.952079][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:13.952150][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:13.952221][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:13.952292][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:13.952363][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:15.955999][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:16.274119][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:16.274293][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:16.274380][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:16.274457][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:16.274534][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:16.274609][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:16.274686][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:16.274761][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:16.274837][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:16.274914][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:16.274993][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:18.277207][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:18.602866][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:18.603081][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:18.603188][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:18.603287][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:18.603386][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:18.603483][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:18.603582][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:18.603680][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:18.603777][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:18.603874][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:18.603973][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:20.606096][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:20.913600][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:20.913814][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:20.913925][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:20.914037][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:20.914137][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:20.914235][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:20.914333][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:20.914430][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:20.914527][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:20.914624][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:20.914731][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:22.917934][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:23.247217][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:23.247411][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:23.247521][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:23.247622][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:23.247720][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:23.247817][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:23.247915][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:23.248012][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:23.248109][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:23.248219][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:23.248319][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:25.250114][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:25.572504][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:25.572697][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:25.572806][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:25.572905][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:25.573003][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:25.573113][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:25.573212][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:25.573309][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:25.573407][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:25.573504][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:25.573603][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:27.577369][Debug][TakingElevatorRequest][request_elevator_condiftion] [request_elevator_condiftion] Request url is [https://ec.rdmscloud.com/dispatching/eleStatus/1912036806260436994]
+[2025-04-15 14:57:27.920706][Debug][TakingElevatorRequest][request_get] {"code":"1","msg":"操作成功","result":{"eleRealTimeDataList":[{"elevatorId":"1897160371549020162","elevatorNumber":"00010001","connectionState":"ONLINE","floor":8,"motion":"STOP","layerStatus":null,"peopleStatus":null,"backDoorLive":null,"fontDoorLive":2,"traceId":"2135557754","elevatorStatusCode":"idleMode","elevatorStatusName":"空闲中","peopleNumber":null}],"taskData":{"traceId":"2135557754","robotId":"1912036806260436994","robotCode":"668","elevatorId":"1897160371549020162","departureFloor":1,"destinationFloor":9,"stageStatusCode":"2000","stageStatusName":"机器人入梯","taskStatusCode":"5006","taskStatusName":"乘梯请求已完成（机器人取消）","elevatorNumber":"00010001"}},"pageNum":null,"pageSize":null,"total":null,"pages":null,"pageRequest":null,"success":true}
+[2025-04-15 14:57:27.920895][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||
+[2025-04-15 14:57:27.921002][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_id is [1897160371549020162]
+[2025-04-15 14:57:27.921103][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: connection_state is [ONLINE]
+[2025-04-15 14:57:27.921202][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: floor is [8]
+[2025-04-15 14:57:27.921300][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: motion is [STOP]
+[2025-04-15 14:57:27.921398][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: back_door_live is [None]
+[2025-04-15 14:57:27.921494][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: font_door_live is [2]
+[2025-04-15 14:57:27.921592][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_code is [idleMode]
+[2025-04-15 14:57:27.921688][Info][TakingElevatorRequest][request_elevator_condiftion] [Elevator Status]: elevator_status_name is [空闲中]
+[2025-04-15 14:57:27.921801][Info][TakingElevatorRequest][request_elevator_condiftion] ||||||||||||||||||||||||||||||||

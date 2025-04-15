@@ -1,0 +1,2 @@
+[2025-04-15 14:59:30.039776][Debug][DoorControl][door_control] [Debug]: request_url is [http://192.168.10.57:48208/opendoor]
+[2025-04-15 14:59:30.079032][Debug][DoorControl][request_post] {"code": 0, "message": "success", "ret": "OK"}

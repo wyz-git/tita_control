@@ -1,0 +1,18 @@
+[2025-04-15 14:47:26.149341][Info][ElevatorStatusGet][__init__] [ELEVATOR_COMMAND_GET]: MQTT INIT...
+[2025-04-15 14:47:32.158023][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_ID] [INFO]: MQTT_CHANNEL_CLIENT_ID is [rdms_iot_1912035015716700161]
+[2025-04-15 14:47:32.158120][Info][ElevatorStatusGet][get_MQTT_CHANNEL_CLIENT_PASSWORD] [INFO]: MQTT_CHANNEL_CLIENT_PASSWORD is [21017679976745F7973659A6A337194C]
+[2025-04-15 14:47:32.158215][Info][ElevatorStatusGet][get_MQTT_CHANNEL_HOST] MQTT_CHANNEL_HOST: [iotlink-1.rdms.rdmscloud.com |and| 2883]
+[2025-04-15 14:47:32.158304][Info][ElevatorStatusGet][get_MQTT_CHANNEL_USERNAME] [INFO]: MQTT_CHANNEL_USERNAME is [1912035015716700161]
+[2025-04-15 14:47:32.158397][Info][ElevatorStatusGet][connect] [INFO]: cloud_broker is [iotlink-1.rdms.rdmscloud.com]
+[2025-04-15 14:47:32.158483][Info][ElevatorStatusGet][connect] [INFO]: cloud_port is [2883]
+[2025-04-15 14:47:32.158568][Info][ElevatorStatusGet][connect] [INFO]: client_id is [rdms_iot_1912035015716700161]
+[2025-04-15 14:47:32.158655][Info][ElevatorStatusGet][connect] [INFO]: client_password is [21017679976745F7973659A6A337194C]
+[2025-04-15 14:47:32.201431][Info][ElevatorStatusGet][subscribe] Data topic: /EMQX1/1912035015716700161/user/data
+[2025-04-15 14:47:32.201542][Info][ElevatorStatusGet][subscribe] Command topic: /EMQX1/1912035015716700161/user/command
+[2025-04-15 14:47:32.201619][Info][ElevatorStatusGet][subscribe] ACK topic: /EMQX1/1912035015716700161/user/ack
+[2025-04-15 14:47:32.201692][Info][ElevatorStatusGet][subscribe] Subscribe to MQTT Broker: /EMQX1/1912035015716700161/user/command
+[2025-04-15 14:47:32.230962][Info][ElevatorStatusGet][on_connect] [Debug]: Success Connected to MQTT Broker!
+[2025-04-15 14:47:45.836474][Info][ElevatorStatusGet][on_message] test...
+[2025-04-15 14:47:45.836807][Info][ElevatorStatusGet][on_message] Received `{"requestId":1744699665795,"heads":{"instructionId":"1361714623787274240","thingId":"1912035015716700161"},"body":{"command":"enter"}}` from `/EMQX1/1912035015716700161/user/command` topic
+[2025-04-15 14:47:50.370835][Info][ElevatorStatusGet][on_message] test...
+[2025-04-15 14:47:50.371002][Info][ElevatorStatusGet][on_message] Received `{"requestId":1744699670329,"heads":{"instructionId":"1361714642984603648","thingId":"1912035015716700161"},"body":{"command":"enter"}}` from `/EMQX1/1912035015716700161/user/command` topic

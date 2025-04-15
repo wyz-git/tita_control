@@ -1,0 +1,455 @@
+[2025-04-15 16:09:13.055184][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 16:09:13.055435][Info][main][request_for_elevator_order] start request_for_elevator_order
+[2025-04-15 16:09:14.055378][Info][main][get_elevator_status] waitting for request
+[2025-04-15 16:09:14.055441][Info][main][cancel_take_elevator] waitting for request
+[2025-04-15 16:09:14.056581][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 16:09:15.057003][Info][main][get_elevator_status] waitting for request
+[2025-04-15 16:09:15.057056][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 16:09:16.057814][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 16:09:16.057849][Info][main][cancel_take_elevator] waitting for request
+[2025-04-15 16:09:16.058238][Info][main][get_elevator_status] waitting for request
+[2025-04-15 16:09:17.059037][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 16:09:17.059078][Info][main][get_elevator_status] waitting for request
+[2025-04-15 16:09:18.060739][Info][main][cancel_take_elevator] waitting for request
+[2025-04-15 16:09:18.060880][Info][main][get_elevaotor_command] waitting for request
+[2025-04-15 16:09:18.060796][Info][main][get_elevator_status] waitting for request
+[2025-04-15 16:09:18.417428][Info][main][request_for_elevator_order] wait for start_enter_elevator_is_ready
+[2025-04-15 16:09:19.061853][Info][main][get_elevaotor_command] start get_elevaotor_command
+[2025-04-15 16:09:19.062208][Info][main][get_elevator_status] get the elevator status
+[2025-04-15 16:09:19.354953][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:19.355028][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [False]
+[2025-04-15 16:09:19.355098][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:19.355166][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:19.355233][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:19.355299][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:19.355365][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:09:19.355432][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:21.357759][Info][main][get_elevator_status] ..........enter 1..........
+[2025-04-15 16:09:21.357956][Info][main][get_elevator_status] ================> ready to enter elevotar <=================
+[2025-04-15 16:09:21.646729][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:21.646801][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:21.646867][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:21.646932][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:21.646997][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:21.647062][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:21.647126][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:09:21.647190][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:23.649166][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:23.649407][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:23.967451][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:23.967526][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:23.967597][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:23.967667][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:23.967737][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:23.967806][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:23.967875][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:09:23.967943][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:25.968760][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:25.968916][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:26.267264][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:26.267347][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:26.267429][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:26.267508][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:26.267588][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:26.267667][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:26.267743][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:09:26.267823][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:27.535955][Info][main][request_for_elevator_order] >>>>>>>>>> enter the elevator <<<<<<<<<<<<
+[2025-04-15 16:09:28.270022][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:28.270358][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:28.537093][Info][main][request_for_elevator_order] wait for start_exit_elevator_is_ready
+[2025-04-15 16:09:28.608319][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:28.608403][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:28.608482][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:28.608560][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:28.608637][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:28.608715][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:28.608792][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:09:28.608869][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:30.611721][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:30.611906][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:30.913310][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:30.913393][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:30.913472][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:30.913550][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:30.913629][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:30.913714][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:30.913796][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:09:30.913875][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:32.916115][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:32.916269][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:33.198539][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:33.198609][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:33.198675][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:33.198740][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:33.198803][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:33.198867][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:33.198930][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:09:33.198994][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:35.201720][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:35.201955][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:35.498890][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:35.498966][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:35.499032][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:35.499096][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:35.499160][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:35.499223][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:35.499285][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:09:35.499348][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:37.502007][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:37.502193][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:37.832282][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:37.832359][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:37.832430][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:37.832499][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:37.832571][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:37.832641][Info][main][get_elevator_status] MOTION: [DOWN]
+[2025-04-15 16:09:37.832710][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:09:37.832780][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:39.835671][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:39.835856][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:40.116923][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:40.116999][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:40.117070][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:40.117141][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:40.117211][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:40.117280][Info][main][get_elevator_status] MOTION: [DOWN]
+[2025-04-15 16:09:40.117349][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:09:40.117420][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:42.120142][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:42.120468][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:42.412791][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:42.412868][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:42.412940][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:42.413010][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:42.413080][Info][main][get_elevator_status] FLOOR: [-1]
+[2025-04-15 16:09:42.413150][Info][main][get_elevator_status] MOTION: [DOWN]
+[2025-04-15 16:09:42.413220][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:09:42.413290][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:44.415525][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:44.415680][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:44.693999][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:44.694070][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:44.694138][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:44.694205][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:44.694272][Info][main][get_elevator_status] FLOOR: [-1]
+[2025-04-15 16:09:44.694338][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:44.694419][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:09:44.694486][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:46.695402][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:46.695599][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:47.026856][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:47.026931][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:47.027000][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:47.027070][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:47.027140][Info][main][get_elevator_status] FLOOR: [-1]
+[2025-04-15 16:09:47.027209][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:47.027277][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:09:47.027346][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:49.029841][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:49.030062][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:49.335883][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:49.335952][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:49.336018][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:49.336082][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:49.336146][Info][main][get_elevator_status] FLOOR: [-1]
+[2025-04-15 16:09:49.336209][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:49.336273][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:09:49.336338][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:50.069794][Info][main][cancel_take_elevator] cancel take the elevator
+[2025-04-15 16:09:51.337816][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:51.337973][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:51.649911][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:51.649982][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:51.650049][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:51.650114][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:51.650178][Info][main][get_elevator_status] FLOOR: [-1]
+[2025-04-15 16:09:51.650241][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:09:51.650305][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:09:51.650368][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:53.651503][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:53.651687][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:53.967721][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:53.967791][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:53.967857][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:53.967921][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:53.967985][Info][main][get_elevator_status] FLOOR: [-1]
+[2025-04-15 16:09:53.968049][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:09:53.968114][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:09:53.968178][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:55.970604][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:55.970794][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:56.264031][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:56.264106][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:56.264176][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:56.264245][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:56.264314][Info][main][get_elevator_status] FLOOR: [1]
+[2025-04-15 16:09:56.264383][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:09:56.264453][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:09:56.264521][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:58.266788][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:09:58.266973][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:09:58.557957][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:09:58.558034][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:09:58.558105][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:09:58.558174][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:09:58.558243][Info][main][get_elevator_status] FLOOR: [2]
+[2025-04-15 16:09:58.558311][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:09:58.558388][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:09:58.558457][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:00.560726][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:00.560894][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:00.882645][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:00.882715][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:00.882780][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:00.882844][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:00.882908][Info][main][get_elevator_status] FLOOR: [3]
+[2025-04-15 16:10:00.882972][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:10:00.883037][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:00.883100][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:02.885328][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:02.885490][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:03.181643][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:03.181722][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:03.181793][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:03.181860][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:03.181926][Info][main][get_elevator_status] FLOOR: [5]
+[2025-04-15 16:10:03.181991][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:10:03.182055][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:03.182119][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:05.184107][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:05.184437][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:05.496465][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:05.496541][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:05.496612][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:05.496682][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:05.496752][Info][main][get_elevator_status] FLOOR: [6]
+[2025-04-15 16:10:05.496829][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:10:05.496898][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:05.496968][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:07.498294][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:07.498609][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:07.812877][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:07.812949][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:07.813016][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:07.813083][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:07.813150][Info][main][get_elevator_status] FLOOR: [7]
+[2025-04-15 16:10:07.813215][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:10:07.813281][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:07.813345][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:09.816060][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:09.816405][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:10.147697][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:10.147768][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:10.147835][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:10.147900][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:10.147965][Info][main][get_elevator_status] FLOOR: [8]
+[2025-04-15 16:10:10.148030][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:10:10.148108][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:10.148174][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:12.150434][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:12.150591][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:12.460736][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:12.460806][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:12.460871][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:12.460937][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:12.461001][Info][main][get_elevator_status] FLOOR: [8]
+[2025-04-15 16:10:12.461064][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:12.461128][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:12.461192][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:14.463763][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:14.464088][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:14.775073][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:14.775143][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:14.775210][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:14.775275][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:14.775340][Info][main][get_elevator_status] FLOOR: [8]
+[2025-04-15 16:10:14.775404][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:14.775468][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:10:14.775531][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:16.778252][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:16.778564][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:17.063906][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:17.063984][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:17.064051][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:17.064115][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:17.064180][Info][main][get_elevator_status] FLOOR: [8]
+[2025-04-15 16:10:17.064244][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:17.064308][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:10:17.064372][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:19.066641][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:19.066818][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:19.364722][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:19.364792][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:19.364858][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:19.364923][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:19.364987][Info][main][get_elevator_status] FLOOR: [8]
+[2025-04-15 16:10:19.365051][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:19.365114][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:10:19.365178][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:21.366517][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:21.366665][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:21.706811][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:21.706882][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:21.706949][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:21.707014][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:21.707079][Info][main][get_elevator_status] FLOOR: [8]
+[2025-04-15 16:10:21.707143][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:21.707221][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:21.707286][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:23.709979][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:23.710171][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:24.008521][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:24.008596][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:24.008666][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:24.008735][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:24.008804][Info][main][get_elevator_status] FLOOR: [8]
+[2025-04-15 16:10:24.008872][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:10:24.008941][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:24.009010][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:26.011177][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:26.011371][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:26.308876][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:26.308969][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:26.309052][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:26.309129][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:26.309207][Info][main][get_elevator_status] FLOOR: [8]
+[2025-04-15 16:10:26.309283][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:10:26.309367][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:26.309444][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:28.310461][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:28.310645][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:28.618648][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:28.618723][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:28.618793][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:28.618862][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:28.618930][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:28.618998][Info][main][get_elevator_status] MOTION: [UP]
+[2025-04-15 16:10:28.619067][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:28.619135][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:30.621361][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:30.621518][Info][main][get_elevator_status] .......... no enter if 2 ............
+[2025-04-15 16:10:30.912473][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:30.912547][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:30.912616][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [False]
+[2025-04-15 16:10:30.912685][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:30.912755][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:30.912823][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:30.912891][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:10:30.912959][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:32.915641][Info][main][get_elevator_status] ..........enter 2..........
+[2025-04-15 16:10:32.915864][Info][main][get_elevator_status] ================> ready to exit elevotar <=================
+[2025-04-15 16:10:33.228295][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:33.228366][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:33.228432][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:33.228497][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:33.228561][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:33.228638][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:33.228702][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:10:33.228766][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:35.518660][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:35.518735][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:35.518806][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:35.518874][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:35.518942][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:35.519011][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:35.519081][Info][main][get_elevator_status] FONT_DOOR_LIVE: [4]
+[2025-04-15 16:10:35.519150][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:37.894515][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:37.894614][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:37.894705][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:37.894793][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:37.894882][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:37.894976][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:37.895064][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:37.895152][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:38.837683][Info][main][request_for_elevator_order] >>>>>>>>>> exit the elevator <<<<<<<<<<<<
+[2025-04-15 16:10:40.204086][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:40.204172][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:40.204251][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:40.204331][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:40.204409][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:40.204487][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:40.204565][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:40.204643][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:42.511486][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:42.511569][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:42.511650][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:42.511730][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:42.511808][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:42.511885][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:42.511962][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:42.512039][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:44.821951][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:44.822029][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:44.822102][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:44.822172][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:44.822254][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:44.822325][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:44.822395][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:44.822463][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:47.119743][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:47.119818][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:47.119889][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:47.119960][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:47.120030][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:47.120100][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:47.120169][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:47.120238][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:49.435719][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:49.435794][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:49.435860][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:49.435926][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:49.435991][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:49.436054][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:49.436118][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:49.436182][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:51.740571][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:51.740669][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:51.740767][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:51.740856][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:51.740944][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:51.741033][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:51.741121][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:51.741209][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:54.051620][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:54.051726][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:54.051816][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:54.051906][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:54.051995][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:54.052082][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:54.052170][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:54.052257][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:56.394754][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:56.394852][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:56.394942][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:56.395030][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:56.395118][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:56.395205][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:56.395293][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:56.395380][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:58.725201][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:10:58.725274][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:10:58.725340][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:10:58.725407][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:10:58.725472][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:10:58.725537][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:10:58.725601][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:10:58.725665][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:11:01.050887][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:11:01.050963][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:11:01.051034][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:11:01.051104][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:11:01.051174][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:11:01.051243][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:11:01.051313][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:11:01.051383][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:11:03.343421][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:11:03.343519][Info][main][get_elevator_status] self.start_enter_elevator_is_ready: [True]
+[2025-04-15 16:11:03.343609][Info][main][get_elevator_status] self.start_exit_elevator_is_ready: [True]
+[2025-04-15 16:11:03.343698][Info][main][get_elevator_status] CONNECTION_STATE: [ONLINE]
+[2025-04-15 16:11:03.343788][Info][main][get_elevator_status] FLOOR: [9]
+[2025-04-15 16:11:03.343877][Info][main][get_elevator_status] MOTION: [STOP]
+[2025-04-15 16:11:03.343966][Info][main][get_elevator_status] FONT_DOOR_LIVE: [2]
+[2025-04-15 16:11:03.344096][Info][main][get_elevator_status] ------------------------------
+[2025-04-15 16:11:04.345304][Error][main][get_elevator_status] timer task error [main thread is not in main loop]

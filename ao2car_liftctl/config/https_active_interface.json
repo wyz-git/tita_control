@@ -1,0 +1,17 @@
+{
+        "lu_bang_cloud_url":{
+                "URL_HEADER":{
+                        "string":"https://ec.rdmscloud.com"
+                }
+        },
+        "item_config":{
+                "SECURITY_KEY":{
+                        "string":"20250226e13b8c4a8a114b5eb0e6c417fef559db"
+                }
+        },
+        "elevator_config":{
+                "ELEVATOR_NUMBER":{
+                        "string":"00010001"
+                }
+        }
+}
