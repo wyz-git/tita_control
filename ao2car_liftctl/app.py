@@ -8,6 +8,7 @@ import time
 from typing import Optional
 from floor_control import FllorControl
 from door_control import DoorControl
+from PIL import Image, ImageTk
 
 class SerialToMqttBridge:
     def __init__(self, serial_port, baudrate, mqtt_server, mqtt_port, mqtt_topic):
@@ -104,21 +105,160 @@ class DualSRTPlayerWithMQTT:
     def __init__(self, root):
         self.root = root
         self.root.title("TITA控制端")
-
+    
         # 初始化变量
         self.process1 = None  # 主SRT流进程
         self.process2 = None  # 备SRT流进程
         self.mqtt_client = None
         self.playing1 = False  # 主流状态
+        self.playing1_stop = True  # 主流状态
         self.playing2 = False  # 备流状态
         self.bridge = None
         self.bridge_thread = None
+        self.last_frame_time = time.time()
         self.create_parameter_inputs()
-        # 配置界面布局
+        self.create_video_display()
         self.create_widgets()
-
-        # 窗口关闭事件
+        self._init_styles() 
+        # self.root.after(1000, self._start_read_check_timer) 
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
+
+
+    def _start_read_check_timer(self):
+        """启动读取状态检查定时器"""
+        if not self.playing1:  # 只在主流运行时工作
+            self.read_check_timer = self.root.after(1000, self._start_read_check_timer)
+            return
+        
+        if time.time() - self.last_frame_time > 8:
+            self._restart_stream(1)
+            self.last_frame_time = time.time()
+
+        
+        # 每秒检查一次
+        self.read_check_timer = self.root.after(1000, self._start_read_check_timer)
+
+    def _stop_read_check_timer(self):
+        """停止定时器"""
+        if self.read_check_timer:
+            self.root.after_cancel(self.read_check_timer)
+            self.read_check_timer = None
+
+    def _init_styles(self):
+        """初始化界面样式"""
+        style = ttk.Style()
+        style.theme_use('clam')
+        
+        # 配置全局按钮样式
+        style.configure('TButton', 
+                       background='#409EFF',  # 主色调
+                       foreground='white',
+                       font=('微软雅黑', 10),
+                       borderwidth=0,
+                       relief='flat',
+                       padding=6)
+        
+        # 按钮交互状态颜色变化
+        style.map('TButton',
+                 background=[('active', '#337ECC'),  # 悬停颜色
+                            ('disabled', '#C0C4CC')], # 禁用状态
+                 foreground=[('disabled', '#FFFFFF')])
+        
+        # 特殊按钮样式
+        style.configure('Primary.TButton',  # 重要操作按钮
+                      background='#67C23A',
+                      foreground='white')
+        style.configure('Danger.TButton',  # 危险操作按钮
+                      background='#F56C6C',
+                      foreground='white')
+        style.configure('Phrase.TButton',  # 短语按钮
+                      background='#909399',
+                      foreground='white',
+                      font=('微软雅黑', 9),
+                      padding=3)
+
+
+    def _restart_stream(self, stream_num):
+        """带延迟的流重启机制"""
+        self.stop_stream(stream_num)
+        time.sleep(2)  # 等待2秒避免频繁重启
+        self.start_stream(stream_num)
+        self.update_status(f"流{stream_num} 自动重连中...")
+        
+    def video_decode_thread(self, process):
+        width, height = 848, 480
+        i1 = 0
+        self.last_frame_time = time.time()
+        while True:
+            # 心跳检测（每2秒检查）
+            if self.playing1_stop:
+                print("video_decode_thread break")
+                break  #
+            if time.time() - self.last_frame_time > 2:
+                self.root.after(0, self._restart_stream, 1)
+                break
+            # print("read")
+            raw_frame = process.stdout.read(width * height * 3)
+            # print("read ok")
+            if raw_frame:
+                self.last_frame_time = time.time()
+                image = Image.frombytes('RGB', (width, height), raw_frame)
+                # resized_img = image.resize((848, 480), Image.Resampling.NEAREST)
+                self.root.after(0, self._safe_update_image, image)
+                # i1=i1+1
+                # print("read",i1)
+            else:
+                print("video_decode_thread error")
+                # 进程异常退出时重启
+                if process.poll() is not None:
+                    self.root.after(0, self._restart_stream, 1)
+                    break
+
+    def _safe_update_image(self, image):
+        self.tk_image = ImageTk.PhotoImage(image)
+        self.video_label.config(image=self.tk_image)
+        self.video_label.image = self.tk_image
+
+    def create_video_display(self):
+        """右上方固定尺寸视频显示面板"""
+        # 主容器使用grid布局
+        main_container = ttk.Frame(self.root)
+        main_container.pack(fill=tk.BOTH, expand=True)
+
+        # 视频容器（右上方）
+        video_container = ttk.Frame(main_container)
+        video_container.grid(row=0, column=1, sticky="ne", padx=5, pady=5)
+
+        # 固定尺寸视频框架
+        self.video_frame = ttk.LabelFrame(video_container, 
+                                        text="实时视频流",
+                                        width=848, 
+                                        height=480)
+        self.video_frame.pack_propagate(False)  # 禁止自动调整大小
+        self.video_frame.pack()
+
+        # Canvas视频画布
+        self.canvas = tk.Canvas(
+            self.video_frame,
+            bg='black',
+            width=848,
+            height=480,
+            highlightthickness=0
+        )
+        self.canvas.pack()
+
+        # 图像标签锚定到左上角
+        self.video_label = ttk.Label(self.canvas)
+        self.canvas.create_window(0, 0, 
+                                window=self.video_label, 
+                                anchor="nw", 
+                                tags="video_window")
+
+        # 配置grid布局权重
+        main_container.columnconfigure(0, weight=1)  # 左侧区域自适应
+        main_container.columnconfigure(1, weight=0)  # 右侧固定宽度
+        main_container.rowconfigure(0, weight=1)      # 单行布局
+        
 
     def start_door_control(self):
         try:
@@ -147,53 +287,124 @@ class DualSRTPlayerWithMQTT:
             messagebox.showerror("门控失败", f"错误状态码: {response.status_code}")
 
     def create_parameter_inputs(self):
-        """创建电梯控制参数输入面板"""
-        param_frame = ttk.LabelFrame(self.root, text="电梯控制参数")
-        param_frame.pack(fill=tk.X, padx=5, pady=5, expand=True)
-
-        # 起始楼层输入
-        ttk.Label(param_frame, text="起始楼层:").grid(row=0, column=0, padx=5, pady=2)
-        self.start_floor_entry = ttk.Entry(param_frame, width=8)
-        self.start_floor_entry.insert(0, "1")
-        self.start_floor_entry.grid(row=0, column=1, sticky=tk.W)
-
-        # 目标楼层输入
-        ttk.Label(param_frame, text="目标楼层:").grid(row=1, column=0, padx=5, pady=2)
-        self.exit_floor_entry = ttk.Entry(param_frame, width=8)
-        self.exit_floor_entry.insert(0, "9")
-        self.exit_floor_entry.grid(row=1, column=1, sticky=tk.W)
-
-        # 启动按钮
-        ttk.Button(param_frame, 
-                 text="启动电梯控制",
-                 command=self.start_elevator_control
-                 ).grid(row=2, column=0, columnspan=2, pady=5)
+        """创建电梯控制面板（左半部布局）"""
+        # 主容器（占左侧50%宽度）
+        # 限制最小/最大宽度
+        left_container = ttk.Frame(self.root)
+        left_container.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         
-        # 新增门控按钮
-        ttk.Button(param_frame, 
-                text="启动门禁",
-                command=self.start_door_control
-                ).grid(row=3, column=0, columnspan=2, pady=5)
+        # 参数输入面板
+        param_frame = ttk.LabelFrame(left_container, text="电梯控制参数")
+        param_frame.pack(fill=tk.X, padx=5, pady=5)
         
-        # 新增状态监控面板
-        status_frame = ttk.LabelFrame(self.root, text="电梯状态监控")
-        status_frame.pack(fill=tk.X, padx=5, pady=5, expand=True)
+        # 使用Grid布局规范输入控件
+        param_frame.columnconfigure(1, weight=1)
+        
+        # 起始楼层
+        ttk.Label(param_frame, text="起始楼层:").grid(row=0, column=0, padx=5, pady=2, sticky="e")
+        self.start_floor_entry = ttk.Spinbox(param_frame, from_=1, to=20, width=8)
+        self.start_floor_entry.set(1)
+        self.start_floor_entry.grid(row=0, column=1, padx=5, pady=2, sticky="w")
+        
+        # 目标楼层
+        ttk.Label(param_frame, text="目标楼层:").grid(row=1, column=0, padx=5, pady=2, sticky="e")
+        self.exit_floor_entry = ttk.Spinbox(param_frame, from_=1, to=20, width=8)
+        self.exit_floor_entry.set(9)
+        self.exit_floor_entry.grid(row=1, column=1, padx=5, pady=2, sticky="w")
+        
+        # 控制按钮容器
+        btn_frame = ttk.Frame(param_frame)
+        btn_frame.grid(row=2, column=0, columnspan=2, pady=10)
+        
+        # 修改电梯控制按钮
+        ttk.Button(btn_frame, text="启动电梯控制", 
+                 command=self.start_elevator_control,
+                 style='Primary.TButton').pack(side=tk.LEFT, padx=5)
+        ttk.Button(btn_frame, text="门禁控制", 
+                 command=self.start_door_control,
+                 style='Primary.TButton').pack(side=tk.LEFT, padx=5)
 
+        # 状态监控面板
+        status_frame = ttk.LabelFrame(left_container, text="电梯状态监控")
+        status_frame.pack(fill=tk.X, padx=5, pady=5)
+        
+        # 使用Grid布局状态显示
+        status_frame.columnconfigure(1, weight=1)
         # 创建StringVar变量（网页8 Variable类应用）
         self.floor_var = tk.StringVar(value="N/A")
         self.motion_var = tk.StringVar(value="N/A") 
         self.door_var = tk.StringVar(value="N/A")
+        
+        status_items = [
+            ("当前楼层:", self.floor_var),
+            ("运行状态:", self.motion_var),
+            ("开启状态:", self.door_var)
+        ]
+        
+        for row, (label, var) in enumerate(status_items):
+            ttk.Label(status_frame, text=label).grid(row=row, column=0, padx=5, pady=2, sticky="e")
+            ttk.Label(status_frame, textvariable=var, 
+                    font=('Arial', 9, 'bold')).grid(row=row, column=1, padx=5, pady=2, sticky="w")
+            
+    # =================== 消息发送区域 ===================
+        msg_frame = ttk.LabelFrame(left_container, text="消息发布")
+        msg_frame.pack(fill=tk.X, padx=5, pady=5)
 
-        # 三列式布局（网页7网格布局）
-        ttk.Label(status_frame, text="当前楼层:").grid(row=0, column=0, padx=5)
-        ttk.Label(status_frame, textvariable=self.floor_var).grid(row=0, column=1)
+        # 新增可滑动短语栏（结合网页6的滚动条实现）
+        phrase_container = ttk.Frame(msg_frame)
+        phrase_container.pack(fill=tk.X, pady=3)
 
-        ttk.Label(status_frame, text="运行状态:").grid(row=1, column=0)
-        ttk.Label(status_frame, textvariable=self.motion_var).grid(row=1, column=1)
+        # 创建水平滚动容器（参考网页7的Canvas实现）
+        canvas = tk.Canvas(phrase_container, height=30, highlightthickness=0)
+        scroll_x = ttk.Scrollbar(phrase_container, orient="horizontal", command=canvas.xview)
+        
+        # 配置滚动区域
+        canvas.configure(xscrollcommand=scroll_x.set)
+        scroll_x.pack(side=tk.BOTTOM, fill=tk.X)
+        canvas.pack(side=tk.TOP, fill=tk.X)
 
-        ttk.Label(status_frame, text="开启状态:").grid(row=2, column=0)
-        ttk.Label(status_frame, textvariable=self.door_var).grid(row=2, column=1)
+        # 创建短语按钮容器（使用网页6的Frame嵌套技术）
+        btn_frame = ttk.Frame(canvas)
+        self.btn_frame_id = canvas.create_window((0,0), window=btn_frame, anchor="nw")  # 保存ID
 
+        # 常用短语配置（示例20个，可扩展）
+        phrases = [
+            "请让让我","你好","谢谢",
+            "我来拿奶茶啦","帮我开下门","奶茶帮我放上面",
+            "危险请远离", "请问多少钱", "需要帮助吗", "前方拥堵", 
+            "注意安全", "请勿靠近", "紧急联系", 
+            "右转通行", "左转等候", "直行通过",
+            "停车等待", "保持距离", "减速慢行",
+            "谢谢配合", "请出示证件", "系统故障",
+            "正在处理", "稍等片刻","站住,打劫"
+        ]
+
+        # 动态生成按钮（参考网页5的批量创建技术）
+        for idx, text in enumerate(phrases):
+            btn = ttk.Button(
+                btn_frame, 
+                text=text,
+                width=10,
+                command=lambda t=text: self.message_entry.insert(tk.END, t),
+                style='Phrase.TButton'
+            )
+            btn.grid(row=0, column=idx, padx=2, sticky="ew")
+
+        # 自适应配置
+        btn_frame.update_idletasks()
+        canvas.config(scrollregion=canvas.bbox("all"))
+        # canvas.bind("<Configure>", 
+        #     lambda e: canvas.itemconfig(btn_frame, width=e.width))
+        
+        # 输入框与发送按钮（保持原有结构）
+        self.message_entry = ttk.Entry(msg_frame)
+        self.message_entry.pack(fill=tk.X, padx=5, pady=2)
+        self.message_entry.bind("<Return>", self.on_enter_pressed)
+
+        self.btn_publish = ttk.Button(msg_frame, 
+                                    text="发送消息", 
+                                    command=self.send_message)
+        self.btn_publish.pack(pady=5)
 
     def start_elevator_control(self):
         """启动电梯控制线程"""
@@ -292,65 +503,6 @@ class DualSRTPlayerWithMQTT:
                                   command=lambda: self.toggle_stream(2))
         self.btn_play2.grid(row=1, column=0, columnspan=2, pady=5)
 
-    # =================== 消息发送区域 ===================
-        msg_frame = ttk.LabelFrame(left_panel, text="消息发布")
-        msg_frame.pack(fill=tk.X, padx=5, pady=5)
-
-        # 新增可滑动短语栏（结合网页6的滚动条实现）
-        phrase_container = ttk.Frame(msg_frame)
-        phrase_container.pack(fill=tk.X, pady=3)
-
-        # 创建水平滚动容器（参考网页7的Canvas实现）
-        canvas = tk.Canvas(phrase_container, height=30, highlightthickness=0)
-        scroll_x = ttk.Scrollbar(phrase_container, orient="horizontal", command=canvas.xview)
-        
-        # 配置滚动区域
-        canvas.configure(xscrollcommand=scroll_x.set)
-        scroll_x.pack(side=tk.BOTTOM, fill=tk.X)
-        canvas.pack(side=tk.TOP, fill=tk.X)
-
-        # 创建短语按钮容器（使用网页6的Frame嵌套技术）
-        btn_frame = ttk.Frame(canvas)
-        self.btn_frame_id = canvas.create_window((0,0), window=btn_frame, anchor="nw")  # 保存ID
-
-        # 常用短语配置（示例20个，可扩展）
-        phrases = [
-            "我来拿奶茶啦","奶茶帮我放上面，谢谢","请让让我", "危险请远离", 
-            "请问多少钱", "需要帮助吗", "前方拥堵", 
-            "注意安全", "请勿靠近", "紧急联系", 
-            "右转通行", "左转等候", "直行通过",
-            "停车等待", "保持距离", "减速慢行",
-            "谢谢配合", "请出示证件", "系统故障",
-            "正在处理", "稍等片刻","站住,打劫"
-        ]
-
-        # 动态生成按钮（参考网页5的批量创建技术）
-        for idx, text in enumerate(phrases):
-            btn = ttk.Button(
-                btn_frame, 
-                text=text,
-                width=10,
-                command=lambda t=text: self.message_entry.insert(tk.END, t),
-                style='Phrase.TButton'
-            )
-            btn.grid(row=0, column=idx, padx=2, sticky="ew")
-
-        # 自适应配置
-        btn_frame.update_idletasks()
-        canvas.config(scrollregion=canvas.bbox("all"))
-        # canvas.bind("<Configure>", 
-        #     lambda e: canvas.itemconfig(btn_frame, width=e.width))
-        
-        # 输入框与发送按钮（保持原有结构）
-        self.message_entry = ttk.Entry(msg_frame)
-        self.message_entry.pack(fill=tk.X, padx=5, pady=2)
-        self.message_entry.bind("<Return>", self.on_enter_pressed)
-
-        self.btn_publish = ttk.Button(msg_frame, 
-                                    text="发送消息", 
-                                    command=self.send_message)
-        self.btn_publish.pack(pady=5)
-
         # 状态栏
         self.status_bar = ttk.Label(self.root, relief=tk.SUNKEN)
         self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
@@ -377,16 +529,19 @@ class DualSRTPlayerWithMQTT:
         url = self.srt_url1.get() if stream_num == 1 else self.srt_url2.get()
         if stream_num == 1:
             cmd = [
-                "ffplay",
-                # "-x", "960",
-                # "-y", "600",
+                "ffmpeg",
                 "-fflags", "nobuffer",
                 "-flags", "low_delay",
-                "-analyzeduration", "0",
-                "-sync", "ext",
-                "-f", "mpegts",
-                url
+                "-flush_packets", "1",
+                "-i", url,
+                # "-vf", "scale=848:480",
+                "-f", "image2pipe",
+                "-pix_fmt", "rgb24",
+                "-vcodec", "rawvideo",
+                # "-threads", "1", 
+                "-"
             ]
+            self.playing1_stop = False
         else:
             cmd = [
                 "ffplay",
@@ -402,19 +557,42 @@ class DualSRTPlayerWithMQTT:
                 "-f", "mpegts",
                 url
             ]
-
         try:
+            # 关键修复：备流不需要捕获 stdout，但需捕获 stderr
             if stream_num == 1:
-                self.process1 = subprocess.Popen(cmd)
+                process = subprocess.Popen(
+                    cmd,
+                    stdout=subprocess.PIPE,
+                    bufsize=1024 * 1024 * 8,  # 8MB缓冲区（单位：字节）
+                    universal_newlines=False
+                )
+            else:
+                process = subprocess.Popen(
+                cmd,
+                stderr=subprocess.PIPE
+                )
+            # 主流通用处理
+            if stream_num == 1:
+                threading.Thread(
+                    target=self.video_decode_thread,
+                    args=(process,),
+                    daemon=True
+                ).start()
+                self.process1 = process
                 self.playing1 = True
                 self.btn_play1.config(text="停止主流")
             else:
-                self.process2 = subprocess.Popen(cmd)
+                self.process2 = process
                 self.playing2 = True
+                self.auto_restart2 = True  # 确保自动重启标志已设置
+                self.stream2_restart_count = 0  # 重置重启计数器
                 self.btn_play2.config(text="停止备流")
-            
+                # 启动监控线程（仅备流需要）
+                threading.Thread(
+                    target=self.monitor_stream2,
+                    daemon=True
+                ).start()
 
-            #self.publish_status(f"stream{stream_num}/started")
             self.update_status(f"流{stream_num} 已启动")
         except Exception as e:
             self.update_status(f"流{stream_num} 启动失败: {str(e)}")
@@ -423,22 +601,72 @@ class DualSRTPlayerWithMQTT:
             else:
                 self.playing2 = False
 
+    def monitor_stream2(self):
+        """备流监控线程"""
+        while self.playing2 and self.auto_restart2:
+            # 检查进程是否存在
+            if self.process2 is None:
+                break
+            
+            # 检查进程状态
+            return_code = self.process2.poll()
+            
+            # 状态正常检测（每2秒）
+            if return_code is None:
+                time.sleep(2)
+                continue
+                
+            # 进程异常退出处理
+            error_log = ""
+            if self.process2.stderr:
+                try:
+                    error_log = self.process2.stderr.read().decode('utf-8', errors='ignore')
+                except Exception as e:
+                    error_log = f"错误日志解码失败: {str(e)}"
+            else:
+                error_log = "无错误日志输出"
+            
+            self.update_status(f"备流异常退出，代码: {return_code}\n错误信息: {error_log}")
+            
+            # 自动重启逻辑
+            if self.stream2_restart_count < 10:
+                self.stream2_restart_count += 1
+                self.root.after(0, self._restart_stream2)
+                time.sleep(5)  # 重启间隔
+            else:
+                self.root.after(0, lambda: self.update_status("备流重启次数已达上限"))
+                break
+
+    def _restart_stream2(self):
+        """带保护的备流重启"""
+        if self.auto_restart2 and self.playing2:
+            self.stop_stream(2)
+            self.start_stream(2)
+            self.update_status(f"备流第{self.stream2_restart_count}次重连...")
+
     def stop_stream(self, stream_num):
-        """停止指定编号的流"""
-        process = self.process1 if stream_num == 1 else self.process2
-        if process:
-            process.terminate()
-            if stream_num == 1:
+        """停止指定流（改进版）"""
+        if stream_num == 1:
+            if self.process1:
+                self.process1.terminate()
                 self.process1 = None
                 self.playing1 = False
+                self.playing1_stop = True
                 self.btn_play1.config(text="启动主流")
-            else:
+
+        if stream_num == 2:
+            if self.process2:
+                self.process2.terminate()
+                self.auto_restart2 = False  # 阻止自动重启
+                try:
+                    self.process2.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    self.process2.kill()
                 self.process2 = None
                 self.playing2 = False
+                self.stream2_restart_count = 0
                 self.btn_play2.config(text="启动备流")
-
-            #self.publish_status(f"stream{stream_num}/stopped")
-            self.update_status(f"流{stream_num} 已停止")
+                self.update_status(f"流{stream_num} 已停止")
 
     def init_mqtt(self):
         """初始化MQTT连接"""
@@ -541,5 +769,9 @@ class DualSRTPlayerWithMQTT:
 if __name__ == "__main__":
     root = tk.Tk()
     app = DualSRTPlayerWithMQTT(root)
-    root.geometry("350x800")  # 调整窗口大小
+    # 设置全屏属性（隐藏标题栏）
+    root.attributes('-fullscreen', True)  # [1,2,5](@ref)
+    # 绑定退出全屏快捷键（如ESC键）
+    root.bind("<Escape>", lambda e: root.attributes('-fullscreen', False))
     root.mainloop()
+
