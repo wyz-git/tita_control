@@ -6,7 +6,7 @@ import select
 
 def main():
     process = subprocess.Popen(
-        ["python3", "app.py"],
+        ["./app"],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True

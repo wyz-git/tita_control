@@ -30,7 +30,7 @@ class FllorControl():
                 while self.wait_for_request:
                         self.Log.info("waitting for request")
                         time.sleep(2)
-                time.sleep(90)
+                time.sleep(20)
                 self.Log.info("cancel take the elevator")
                 self.taking_elevator_request.request_cancel_elevator_work()
                 
@@ -64,11 +64,7 @@ class FllorControl():
                                 "UP": "上行▲", 
                                 "DOWN": "下行▼"
                                 }
-                                self.gui.root.after(0, lambda: [
-                                self.gui.floor_var.set(f"{FLOOR}F"),
-                                self.gui.motion_var.set(motion_map.get(MOTION, "异常")),
-                                self.gui.door_var.set(door_status)
-                                ])
+                                self.gui.update_status_signal.emit(FLOOR, MOTION, FONT_DOOR_LIVE)
                                 time.sleep(2)                                        
                                 if self.start_enter_elevator_is_ready == False and self.start_exit_elevator_is_ready == False:
                                         self.Log.info("..........enter 1..........")
