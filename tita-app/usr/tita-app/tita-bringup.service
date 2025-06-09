@@ -1,0 +1,15 @@
+[Unit]
+Description=TITA ROS2 bringup service.
+#After=chmod-devices.service
+
+[Service]
+User=root
+Type=simple
+#Environment="ROS_DOMAIN_ID=42"
+Environment="ROS_LOCALHOST_ONLY=0"
+WorkingDirectory=/usr/local
+ExecStart=/usr/bin/bash -c "sleep 1 && source /opt/ros/humble/setup.bash && source /opt/tita/ros2/setup.bash && ros2 launch tita_bringup tita_basic.launch.py"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

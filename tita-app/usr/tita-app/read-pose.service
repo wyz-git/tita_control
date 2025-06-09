@@ -1,0 +1,13 @@
+[Unit]
+Description=TITA read-pose service.
+After=mediamtx.service
+
+[Service]
+User=root
+Type=simple
+WorkingDirectory=/usr/tita-app
+ExecStart=/usr/bin/bash -c "sleep 11 && source install/setup.bash  && install/ros2_aruco/lib/ros2_aruco/aruco_node"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

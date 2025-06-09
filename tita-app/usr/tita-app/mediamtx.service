@@ -1,0 +1,13 @@
+[Unit]
+Description=TITA mediamtx service.
+After=tita-bringup.service
+
+[Service]
+User=root
+Type=simple
+WorkingDirectory=/usr/tita-app
+ExecStart=/usr/bin/bash -c "sleep 11 && ./mediamtx"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

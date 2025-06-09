@@ -1,0 +1,13 @@
+[Unit]
+Description=TITA bt service.
+After=tita-bringup.service
+
+[Service]
+User=root
+Type=simple
+WorkingDirectory=/usr/tita-app
+ExecStart=/usr/bin/bash -c "sleep 11 && source /opt/ros/humble/setup.bash && python3 usb-control.py"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

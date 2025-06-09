@@ -1,0 +1,14 @@
+[Unit]
+Description=TITA bt service.
+After=tita-bringup.service
+
+[Service]
+User=root
+Type=simple
+WorkingDirectory=/usr/tita-app
+ExecStart=/usr/bin/bash -c "sleep 10 && ./bt-pair.sh"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

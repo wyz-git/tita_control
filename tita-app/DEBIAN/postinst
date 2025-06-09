@@ -1,0 +1,38 @@
+#!/bin/bash  
+set -e  
+
+sudo pip3 install mediapipe
+sudo pip3 install numpy==1.23.0
+sudo pip3 uninstall opencv-python opencv-contrib-python
+
+
+cp /usr/tita-app/*.service /lib/systemd/system/
+
+chmod 777 /usr/tita-app/install/ros2_aruco/lib/ros2_aruco/aruco_node
+chmod 777 /usr/tita-app/mediamtx
+chmod 777  /usr/tita-app/bt-pair.sh
+
+systemctl daemon-reload
+systemctl restart tita-bringup.service
+systemctl restart tita-perception.service
+systemctl enable bt-pair.service
+systemctl restart bt-pair.service
+systemctl enable bt-control.service
+systemctl restart bt-control.service
+systemctl enable mediamtx.service
+systemctl restart mediamtx.service
+systemctl enable read-pose.service
+systemctl restart read-pose.service
+systemctl enable code-follow.service
+systemctl restart code-follow.service
+systemctl enable switch-state.service
+systemctl restart switch-state.service
+systemctl enable virtual-control.service
+systemctl restart virtual-control.service
+systemctl enable gesture-follow.service
+systemctl restart gesture-follow.service
+systemctl enable image-pub.service
+systemctl restart image-pub.service
+systemctl enable usb-control.service
+systemctl restart usb-control.service
+exit 0
