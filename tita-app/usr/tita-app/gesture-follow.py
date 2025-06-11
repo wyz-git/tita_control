@@ -47,6 +47,7 @@ class JoyPublisher(Node):
         self.integral = 0
         self.axes_mode = False
         self.control_state['axes'][5] = -1.0
+        self.control_state['axes'][4] = -1.0
         self.control_state['axes'][7] = 1.0
         # ROS2订阅者/发布者
         self.image_sub = self.create_subscription(

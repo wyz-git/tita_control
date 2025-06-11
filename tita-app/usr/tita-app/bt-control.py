@@ -159,6 +159,12 @@ class BluetoothJoyBridge(Node):
                 axes[5] = 0.0
             elif axes[5] == 0.0:
                 axes[5] = 1.0
+            if axes[6] == 0.0:
+                axes[6] = 1.0
+            elif axes[6] == 1.0:
+                axes[6] = -1.0
+            elif axes[6] == 2.0:
+                axes[6] = -1.0
             if axes[7] == 0.0:
                 axes[7] = 1.0
             elif axes[7] == 1.0:

@@ -41,7 +41,7 @@ class JoyPublisher(Node):
         # 初始化变量
         self.axes3 = 0
         self.axes4 = 0
-        self.axes5 = 0
+        self.axes5 = -1
         self.axes6 = -1
         self.axes7 = 0
         self.axes8 = 1
